@@ -1,0 +1,6 @@
+services:
+  nttcom_user.subscriber:
+    class: Drupal\nttcom_user\EventSubscriber\UserWorkflowSubscriber
+    arguments: ['@current_user', '@entity_type.manager', '@request_stack', '@path.validator', '@current_route_match']
+    tags:
+      - { name: event_subscriber }

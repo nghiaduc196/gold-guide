@@ -1,0 +1,30 @@
+uuid: 64af0828-5c74-420e-84c7-a7e3f1cdf11f
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_gender
+field_name: field_gender
+entity_type: user
+type: list_integer
+settings:
+  allowed_values:
+    -
+      value: 1
+      label: Male
+    -
+      value: 2
+      label: Female
+    -
+      value: 3
+      label: Other
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

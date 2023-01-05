@@ -1,0 +1,7 @@
+nttcom_user.verification_mail_exist_form:
+  path: '/user/verification-exist-mail'
+  defaults:
+    _form: '\Drupal\nttcom_user\Form\NttcomUserVerificationMailExistForm'
+    _title: 'Verification mail exist form'
+  requirements:
+    _access: 'TRUE'

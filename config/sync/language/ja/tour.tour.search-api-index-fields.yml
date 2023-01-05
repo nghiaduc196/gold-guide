@@ -1,0 +1,15 @@
+tips:
+  search-api-index-fields-label:
+    label: ラベル
+  search-api-index-fields-machine-name:
+    label: システム内部名称
+  search-api-index-fields-type:
+    label: タイプ
+  search-api-index-fields-edit:
+    label: フィールドの編集
+  search-api-index-fields-remove:
+    label: フィールドを削除
+  search-api-index-fields-submit:
+    label: 変更を保存
+  search-api-index-fields-cancel:
+    label: 変更をキャンセル

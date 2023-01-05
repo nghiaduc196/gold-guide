@@ -1,0 +1,14 @@
+uuid: 57321d6f-6410-4ddb-8f4c-a12ec930925c
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.guide
+  module:
+    - user
+id: user_remove_role_action.guide
+label: 'Remove the Guide role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: guide

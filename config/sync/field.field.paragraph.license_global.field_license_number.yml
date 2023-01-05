@@ -1,0 +1,23 @@
+uuid: a952a3db-efec-4980-b445-8489aea550eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_license_number
+    - paragraphs.paragraphs_type.license_global
+id: paragraph.license_global.field_license_number
+field_name: field_license_number
+entity_type: paragraph
+bundle: license_global
+label: 'License Number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

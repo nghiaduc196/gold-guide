@@ -1,0 +1,15 @@
+entity.calendar.settings:
+  path: 'admin/structure/calendar'
+  defaults:
+    _form: '\Drupal\nttcom_calendar\Form\CalendarSettingsForm'
+    _title: 'Calendar'
+  requirements:
+    _permission: 'administer calendar'
+
+nttcom_calendar.add_calendar:
+  path: '/my-calendar/add'
+  defaults:
+    _title: 'Add calendar'
+    _form: 'Drupal\nttcom_calendar\Form\AddCalendarForm'
+  requirements:
+    _permission: 'access content'

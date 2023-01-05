@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Default theme implementation to webform confirmation.
+ *
+ * Available variables:
+ * - progress: Progress bar.
+ * - message: Confirmation message.
+ * - back_url: URL to the previous webform submission.
+ *
+ * @see template_preprocess_webform_confirmation()
+ *
+ * @ingroup themeable
+ */
+#}
+{{ attach_library('webform/webform.confirmation') }}
+
+{% if progress %}
+  {{ progress }}
+{% endif %}
+
+<div{{ attributes.addClass('webform-confirmation') }}>
+  {% if message %}
+    <div class="p-sp-box"><p class="p-complete-txt">{{ message }}</p></div>
+  {% endif %}
+  {% if back %}
+    <p class="p-complete-btn">
+      <a href="{{ back_url }}" rel="prev" title="{{ back_label }}"{{ back_attributes.addClass(['is-imghover']) }}>{{ back_label }}</a>
+    </p>
+  {% endif %}
+</div>

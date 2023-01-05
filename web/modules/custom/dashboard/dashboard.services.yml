@@ -1,0 +1,4 @@
+services:
+  plugin.manager.dashboard:
+    class: Drupal\dashboard\DashboardManager
+    arguments: ['@module_handler', '@cache.discovery']

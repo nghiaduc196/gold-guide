@@ -1,0 +1,35 @@
+<div class="content">
+  <div class="title text-center">
+    <h2>SPOT LIST</h2>
+    <span>気になるスポットを選択してガイドを検索してください</span>
+  </div>
+  <h2 class="title-main">関西/大阪</h2>
+
+  <div class="main container-fluid">
+    <div class="row gx-5">
+      {% for row in rows %}
+        {% set spot = row.content['#row']._entity  %}
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card-custom">
+            <div class="body-image">
+              <img class="w-100" src="{{ file_url(spot.field_image.entity.fileuri) }}"/>
+              <div class="form-check">
+                <label class="container">
+                  <input type="checkbox" {{ spot.published ? 'checked' : '' }}>
+                  <span class="checkmark text-center"></span>
+                </label>
+              </div>
+            </div>
+            <div class="body-content">
+              <h4>{{ spot.title.value }}</h4>
+              <span>
+                  {{ spot.body.value }}
+                </span>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</div>

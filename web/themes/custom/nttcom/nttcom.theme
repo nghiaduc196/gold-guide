@@ -1,0 +1,131 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the nttcom theme.
+ */
+
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Template\Attribute;
+use Drupal\views\Form\ViewsForm;
+
+/**
+ * Implements hook_preprocess_HOOK() for HTML document templates.
+ *
+ * Adds body classes if certain regions have content.
+ */
+function nttcom_preprocess_html(&$variables) {
+
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for page title templates.
+ */
+function nttcom_preprocess_page_title(&$variables) {
+
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for maintenance-page.html.twig.
+ */
+function nttcom_preprocess_maintenance_page(&$variables) {
+
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for maintenance-page.html.twig.
+ */
+function nttcom_preprocess_page(&$variables) {
+  $type = \Drupal::request()->query->get('type');
+  if (!empty($type)) {
+    $variables['role_login'] = '';
+    if ($type === 'guest') {
+      $variables['role_login'] = 'customer-login';
+    }
+    if ($type === 'guide') {
+      $variables['role_login'] = 'guide-login';
+    }
+    if ($type === 'system') {
+      $variables['role_login'] = 'office-login';
+    }
+  }
+
+  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $variables['language'] = $language;
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for node.html.twig.
+ */
+function nttcom_preprocess_node(&$variables) {
+
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for block.html.twig.
+ */
+function nttcom_preprocess_block(&$variables) {
+
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for menu.html.twig.
+ */
+function nttcom_preprocess_menu(&$variables) {
+
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for form templates.
+ */
+function nttcom_theme_suggestions_form_alter(array &$suggestions, array $variables) {
+
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function nttcom_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+}
+
+/**
+ * Implements hook_preprocess_links__media_library_menu().
+ */
+function nttcom_preprocess_links__media_library_menu(array &$variables) {
+
+}
+
+/**
+ * Implements hook_preprocess_image_widget().
+ */
+function nttcom_preprocess_image_widget(&$variables) {
+}
+
+/**
+ * Implements template_preprocess_links().
+ */
+function nttcom_preprocess_links(&$variables) {
+
+}
+
+
+/**
+ * Implements hook_theme_suggestions_page_alter().
+ */
+function nttcom_theme_suggestions_page_alter(array &$suggestions, array $variables, $hook) {
+  $router = Drupal::routeMatch()->getRouteName();
+  if ($router == 'entity.user.canonical') {
+    $suggestions[] = $hook . '__my_account';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function nttcom_preprocess_menu__account(&$variables) {
+  if ($variables['logged_in']) {
+
+  }
+}

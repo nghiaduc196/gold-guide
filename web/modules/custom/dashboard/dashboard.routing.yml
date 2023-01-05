@@ -1,0 +1,7 @@
+dashboard.dash:
+  path: '/admin/dashboard'
+  defaults:
+    _controller: '\Drupal\dashboard\Controller\DashboardController::getDashboard'
+    _title: 'Dashboard'
+  requirements:
+    _permission: 'access dashboard'

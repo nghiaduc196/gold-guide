@@ -1,0 +1,40 @@
+uuid: c6d6e671-699e-4def-b127-97c03040b0e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.license_local.field_license
+    - field.field.paragraph.license_local.field_license_acquisition_date
+    - field.field.paragraph.license_local.field_license_number
+    - paragraphs.paragraphs_type.license_local
+  module:
+    - datetime
+id: paragraph.license_local.default
+targetEntityType: paragraph
+bundle: license_local
+mode: default
+content:
+  field_license:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_license_acquisition_date:
+    type: datetime_default
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_license_number:
+    type: number
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

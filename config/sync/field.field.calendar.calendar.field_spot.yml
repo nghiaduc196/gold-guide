@@ -1,0 +1,30 @@
+uuid: e8e6e5b4-9288-4be7-9fc5-22e79cf58d1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.calendar.field_spot
+    - node.type.spot
+  module:
+    - nttcom_calendar
+id: calendar.calendar.field_spot
+field_name: field_spot
+entity_type: calendar
+bundle: calendar
+label: Spot
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      spot: spot
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

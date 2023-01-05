@@ -1,0 +1,16 @@
+uuid: 0d7e64ba-0f8c-4db6-b9eb-2081ab066f58
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.spot
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.spot
+target_entity_type_id: node
+target_bundle: spot
+default_langcode: site_default
+language_alterable: false

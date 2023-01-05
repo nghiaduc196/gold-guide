@@ -1,0 +1,12 @@
+{
+    "name": "fpt_software/ntt_firebase_chat",
+    "autoload": {
+        "psr-4": {
+            "FptSoftware\\NttFirebaseChat\\": "src/"
+        }
+    },
+    "require": {
+        "kreait/firebase-php": "6.9",
+        "guzzlehttp/guzzle": "7.5"
+    }
+}

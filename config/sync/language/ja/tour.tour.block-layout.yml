@@ -1,0 +1,5 @@
+tips:
+  place-block:
+    label: ブロックを配置
+  configure-block:
+    label: ブロックの構成

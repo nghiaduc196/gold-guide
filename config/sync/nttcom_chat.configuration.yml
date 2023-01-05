@@ -1,0 +1,13 @@
+api_key: AIzaSyDJsFpjZx4WCicRNLuRveU3NyC6A87SnZQ
+auth_domain: nttchat.firebaseapp.com
+database_url: 'https://nttchat-default-rtdb.asia-southeast1.firebasedatabase.app'
+project_id: nttchat
+storage_bucket: nttchat.appspot.com
+messaging_sender_id: '953148664837'
+app_id: '1:953148664837:web:189993ed218e12a644006c'
+measurement_id: G-42MSNTWZEZ
+submit: 'Save configuration'
+form_build_id: form-4i0c2IOcyTUq3cR5EqdvxoLZdR1U0PmmqnUp6khjiRo
+form_token: 1EfQn5rpd-isgwIVdiOdpYRB3Jyiy52py4m90L1_ibU
+form_id: nttcom_chat.configuration
+op: 'Save configuration'

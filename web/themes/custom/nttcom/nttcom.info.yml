@@ -1,0 +1,22 @@
+name: NTTCom
+type: theme
+base theme: false
+description: 'A theme of the NTTCom'
+
+package: Custom
+version: VERSION
+project: 'NTTCom'
+core_version_requirement: ^8 || ^9
+
+libraries:
+  - nttcom/global-styling
+  - nttcom/global-script
+
+regions:
+  header: 'Header'
+  navigation: 'Navigation'
+  sidebar_left: 'Sidebar left'
+  content: 'Content'
+  footer: 'Footer'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'

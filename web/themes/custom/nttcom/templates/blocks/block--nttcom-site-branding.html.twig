@@ -1,0 +1,31 @@
+{% block content %}
+  {% if site_logo %}
+    {#    <a class="navbar-brand" href="{{ path('<front>') }}"> #}
+    {#      <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" width="160"> #}
+    {#    </a> #}
+    {#    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> #}
+    {#      <span class="navbar-toggler-icon"></span> #}
+    {#    </button> #}
+
+    <div class="mr-auto site-logo">
+      <a class="navbar-brand text-white" href="{{ path('<front>') }}">
+        <img src="{{ site_logo == null ? '/' ~ directory ~'/images/icons/icon_logo.svg' : site_logo }}">
+        <span>{{ site_logo == null ? 'Gold-Guide' : '' }}</span>
+      </a>
+      <div class="navbar-toggler">
+        <a href="/{{ language }}/user" class="navbar-toggler">
+          <img src="/{{ directory ~'/images/icons/icon_person.svg' }}">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">
+          <img src="/{{ directory ~'/images/icons/collapse.svg' }}">
+        </span>
+        </button>
+      </div>
+    </div>
+
+  {% endif %}
+{% endblock %}
+
+

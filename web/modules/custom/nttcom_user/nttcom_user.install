@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * @file
+ * Install, update, and uninstall functions for the nttcom_user module.
+ */
+
+/**
+ * Copy all fullname if $lastname and $firstname is not null
+ * Copy all users email if $lastname and $firstname is null
+ * to their username field.
+ */
+function nttcom_user_install() {
+  /** @var \Drupal\user\UserInterface[] $users */
+  $users = \Drupal::entityTypeManager()->getStorage('user')->loadMultiple();
+  foreach ($users as $user) {
+    if ($user->isAnonymous()) {
+      continue;
+    }
+    if (empty($user->field_first_name->value) && empty($user->field_last_name->value)) {
+      \Drupal::logger('nttcom_user')->error(sprintf("User %s (%s) has no first name and last name", $user->getAccountName(), $user->id()));
+      continue;
+    }
+    if (empty($user->getEmail())) {
+      \Drupal::logger('nttcom_user')->error(sprintf("User %s (%s) has no email", $user->getAccountName(), $user->id()));
+      continue;
+    }
+    if (!empty($user->field_first_name->value) && !empty($user->field_last_name->value)) {
+      $full_name = trim($user->field_first_name->value ?? "").' '.trim($user->field_last_name->value ?? "");
+      $user->setUsername($full_name);
+    }
+    else {
+      $user->setUsername($user->getEmail());
+    }
+    $user->save();
+  }
+}

@@ -1,0 +1,21 @@
+uuid: 5fbdcb81-299e-4c96-b8ce-18566b85a5e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_approval_status
+  module:
+    - options
+    - user
+id: user.user.field_approval_status
+field_name: field_approval_status
+entity_type: user
+bundle: user
+label: 'Approval Status'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,25 @@
+uuid: fae4871c-c359-4e53-be95-3f8fc7342e17
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - nttcom
+_core:
+  default_config_hash: n_nlgjggHVfQt2H__zvLOKB2YtjPDbQ5tHijF9LE1aM
+id: nttcom_site_branding
+theme: nttcom
+region: header
+weight: -3
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

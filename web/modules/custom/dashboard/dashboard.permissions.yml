@@ -1,0 +1,4 @@
+access dashboard:
+  title: 'Access Dashboard'
+  description: 'A custom permission for providing the access to the dashboard.'
+  restrict access: TRUE

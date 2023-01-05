@@ -1,0 +1,31 @@
+<div class="user-login-page">
+    {% if page.header %}
+        <header id="header" class="site-header" data-drupal-selector="site-header" role="banner">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white">
+                <div class="container-fluid">
+                    {{ page.header }}
+                    {% if page.primary_menu or page.secondary_menu %}
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            {{ page.primary_menu }}
+                            {{ page.secondary_menu }}
+                        </div>
+                    {% endif %}
+                </div>
+            </nav>
+        </header>
+    {% endif %}
+
+    <div class="login-box col-12 justify-content-center">
+        <div class="col-6 mx-auto">
+            <div class="login-body">
+                {{ page.content }}
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            {{ page.page_bottom }}
+        </div>
+    </footer>
+</div>

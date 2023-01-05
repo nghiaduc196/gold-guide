@@ -1,0 +1,25 @@
+{{ attach_library('dashboard/dashboard') }}
+<div id="dashboard">
+  {% for group, menu_items in dashboard_menu %}
+    <div class="dashboard-group dashboard-group-group-{{ group }}">
+      <h4>{{ group }}</h4>
+      <ul class="dashboard_menu menu inline">
+        {% for menu_item in menu_items %}
+          <li class="dashboard-menu-item">
+            {% if menu_item['uri'] %}
+              <a href="{{ menu_item['uri'] }}" class="dashboard-menu-link" target="_blank">
+                <i class="fa fa-{{ menu_item['icon'] }}"></i>
+                <div class="title">{{ menu_item['title'] }}</div>
+              </a>
+            {% else %}
+              <a href="{{ menu_item['url'] }}" class="dashboard-menu-link" target="_blank">
+                <i class="fa fa-{{ menu_item['icon'] }}"></i>
+                <div class="title">{{ menu_item['title'] }}</div>
+              </a>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endfor %}
+</div>

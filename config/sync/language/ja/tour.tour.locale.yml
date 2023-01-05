@@ -1,0 +1,22 @@
+label: 翻訳
+tips:
+  locale-overview:
+    label: ユーザーインタフェースの翻訳
+  locale-language:
+    label: 翻訳言語
+    body: 翻訳したい言語を選択してください。
+  locale-search:
+    label: 検索
+    body: 翻訳したい単語または文章を入力してください。単語の一部分のみを入力することも可能です。
+  locale-filter:
+    label: 検索フィルター
+    body: まだ翻訳されていないものを翻訳したい場合は、未翻訳の文字列を検索することができます。既存の翻訳を修正したい場合は、翻訳された文字列だけを検索することもできます。
+  locale-submit:
+    label: 検索条件を適用
+    body: 検索条件を適用するには<em>フィルター</em>ボタンをクリックしてください。
+  locale-translate:
+    label: 翻訳
+  locale-validate:
+    label: 翻訳の検証
+  locale-continue:
+    label: 続き

@@ -1,0 +1,10 @@
+nttcom.fullcalendar:
+  version: VERSION
+  css:
+    theme:
+      css/fullcalendar.css: {}
+  js:
+    js/fullcalendar.js: { }
+  dependencies:
+    - core/drupal
+    - core/drupalSettings

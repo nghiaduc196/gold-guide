@@ -1,0 +1,44 @@
+diff --git a/change_pwd_page.module b/change_pwd_page.module
+index cf99fe1..08415a9 100644
+--- a/change_pwd_page.module
++++ b/change_pwd_page.module
+@@ -69,7 +69,7 @@ function change_pwd_page_form_alter(&$form, &$form_state, $form_id) {
+     $form['actions']['submit']['#submit'] = $form['#submit'];
+     unset($form['#submit']);
+     if (\Drupal::moduleHandler()->moduleExists('password_policy')) {
+-      if (_password_policy_show_policy()) {
++      if (\Drupal::service('password_policy.validation_manager')->tableShouldBeVisible()) {
+         $form['account']['password_policy_status'] = [
+           '#title' => 'Password policies',
+           '#type' => 'table',
+@@ -88,7 +88,7 @@ function change_pwd_page_form_alter(&$form, &$form_state, $form_id) {
+       }
+       $form['#validate'][] = '_password_policy_user_profile_form_validate';
+       $form['#after_build'][] = '_password_policy_user_profile_form_after_build';
+-      $form['actions']['submit']['#submit'][] = '_password_policy_user_profile_form_submit';
++      $form['actions']['submit']['#submit'][] = '_password_policy_user_profile_form_update_fields';
+     }
+   }
+ }
+diff --git a/src/Form/ChangePasswordForm.php b/src/Form/ChangePasswordForm.php
+index 994ed41..d78515c 100644
+--- a/src/Form/ChangePasswordForm.php
++++ b/src/Form/ChangePasswordForm.php
+@@ -145,7 +145,7 @@ class ChangePasswordForm extends FormBase {
+    * {@inheritdoc}
+    */
+   public function validateForm(array &$form, FormStateInterface $form_state) {
+-    $current_pass_input = trim($form_state->getValue('current_pass'));
++    $current_pass_input = trim($form_state->getValue('current_pass') ?? "");
+     if ($current_pass_input) {
+       $user = User::load(\Drupal::currentUser()->id());
+       if (!$this->passwordHasher->check($current_pass_input, $user->getPassword())) {
+@@ -158,7 +158,7 @@ class ChangePasswordForm extends FormBase {
+    * {@inheritdoc}
+    */
+   public function submitForm(array &$form, FormStateInterface $form_state) {
+-    $user = User::load($this->userProfile->id());
++    $user = User::load(\Drupal::routeMatch()->getRawParameter('user'));
+     $user->setPassword($form_state->getValue('pass'));
+     $user->save();
+     $this->messenger()->addStatus($this->t('Your password has been changed.'));

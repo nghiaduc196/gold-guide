@@ -1,0 +1,19 @@
+uuid: e42fd595-6079-4b1a-a778-1a8517f0af64
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_license
+    - paragraphs.paragraphs_type.license_global
+id: paragraph.license_global.field_license
+field_name: field_license
+entity_type: paragraph
+bundle: license_global
+label: License
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,75 @@
+{#<ul class="navbar-nav">#}
+{#  <li class="nav-item dropdown">#}
+{#    {% if logged_in %}#}
+{#      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"#}
+{#         aria-haspopup="true" aria-expanded="false">#}
+{#        <img src="/{{ directory ~'/images/icons/person.svg' }}" width="24"#}
+{#             height="24" class="rounded-circle">#}
+{#      </a>#}
+{#      {% if items %}#}
+{#        <div class="dropdown-menu dropdown-menu-authenticated" aria-labelledby="navbarDropdownMenuLink">#}
+{#          {% for item in items %}#}
+{#            <div{{ item.attributes.addClass(['dropdown-item']) }}>#}
+{#              {{ link(item.title, item.url) }}#}
+{#              {% if item.below %}#}
+{#                {{ menus.menu_links(item.below, attributes, menu_level + 1) }}#}
+{#              {% endif %}#}
+{#            </div>#}
+{#          {% endfor %}#}
+{#        </div>#}
+{#      {% endif %}#}
+{#    {% else %}#}
+{#      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"#}
+{#         aria-haspopup="true" aria-expanded="false">#}
+{#        <img src="/{{ directory ~'/images/icons/person.svg' }}" width="18"#}
+{#             height="18">#}
+{#        {{ "Sign In"|t }}#}
+{#      </a>#}
+{#      <div class="dropdown-menu dropdown-menu-anonymous" aria-labelledby="navbarDropdownMenuLink">#}
+{#        <div class="dropdown-item">#}
+{#          <a href="{{ path('user.login',{'type':'guest'}) }}">{{ "For Guest" }}</a>#}
+{#        </div>#}
+{#        <div class="dropdown-item">#}
+{#          <a href="{{ path('user.login',{'type':'guide'}) }}">{{ "For Guide" }}</a>#}
+{#        </div>#}
+{#        <div class="dropdown-item">#}
+{#          <a href="{{ path('user.login',{'type':'system'}) }}">{{ "For System" }}</a>#}
+{#        </div>#}
+{#      </div>#}
+{#    {% endif %}#}
+{#  </li>#}
+{#</ul>#}
+
+
+<div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
+  <div class="form-inline my-2 my-lg-0 header-right ml-auto">
+
+    {% if logged_in %}
+      <a href="#" class="d-flex align-items-center">
+        <img src="/{{ directory ~'/images/icons/icon_faq.svg' }}">
+        <span >FAQ</span>
+      </a>
+      <a href="#" class="d-flex align-items-center">
+        <img src="/{{ directory ~'/images/icons/icon_browser.svg' }}">
+        <span >日本語</span>
+      </a>
+      <a href="{{ language }}/user/logout" class="d-flex align-items-center">
+        <img src="/{{ directory ~'/images/icons/icon_person.svg' }}">
+        <span >sign out</span>
+      </a>
+    {% else %}
+      <a href="#" class="d-flex align-items-center">
+        <img src="/{{ directory ~'/images/icons/icon_faq.svg' }}">
+        <span >FAQ</span>
+      </a>
+      <a href="#" class="d-flex align-items-center">
+        <img src="/{{ directory ~'/images/icons/icon_browser.svg' }}">
+        <span >日本語</span>
+      </a>
+      <a href="{{ language }}/user/login" class="d-flex align-items-center">
+        <img src="/{{ directory ~'/images/icons/icon_person.svg' }}">
+        <span >sign in</span>
+      </a>
+    {% endif %}
+  </div>
+</div>

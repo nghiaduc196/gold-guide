@@ -1,0 +1,8 @@
+local:
+    root: /var/www/nttcom-w/web
+    uri: 'http://local.nttcom-w.com'
+    host: local.nttcom-w.com
+    user: admin
+    paths:
+        drush-script: drush9
+

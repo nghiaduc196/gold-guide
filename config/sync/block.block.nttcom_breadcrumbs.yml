@@ -1,0 +1,22 @@
+uuid: 4dfb846b-0e97-439c-a66a-bc9f207103e5
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - nttcom
+_core:
+  default_config_hash: VhBzWb7lMRtIOg9G7VSw_0uopi-7zXeHq4vXqqV1HFE
+id: nttcom_breadcrumbs
+theme: nttcom
+region: navigation
+weight: -3
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

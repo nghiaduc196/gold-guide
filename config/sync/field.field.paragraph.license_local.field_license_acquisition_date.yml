@@ -1,0 +1,21 @@
+uuid: f9af2c09-b2e1-4901-b497-82f46cdcdc94
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_license_acquisition_date
+    - paragraphs.paragraphs_type.license_local
+  module:
+    - datetime
+id: paragraph.license_local.field_license_acquisition_date
+field_name: field_license_acquisition_date
+entity_type: paragraph
+bundle: license_local
+label: 'License Acquisition Date'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

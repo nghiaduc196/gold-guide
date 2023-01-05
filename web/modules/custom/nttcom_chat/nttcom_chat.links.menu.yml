@@ -1,0 +1,11 @@
+nttcom_chat:
+  title: 'Chat Configuration'
+  route_name: nttcom_chat.configuration_firebase
+  description: 'Setting chat configuration'
+  parent: system.admin_config
+
+nttcom_chat.chat-with-firebase:
+  title: 'Chat with Firebase'
+  route_name: nttcom_chat.chat-with-firebase
+  description: 'Setting chat configuration'
+  parent: system.admin

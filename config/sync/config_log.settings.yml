@@ -1,0 +1,10 @@
+_core:
+  default_config_hash: XmAs9nbCHoc6DoEAUPbXoiDvo91WF8JHqbJQfd1sHB4
+langcode: ja
+log_ignored_config: {  }
+log_destination:
+  default: default
+  custom: '0'
+  mail: '0'
+log_email_address: ''
+ignore_config_import: false

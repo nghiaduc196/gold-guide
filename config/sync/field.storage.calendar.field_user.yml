@@ -1,0 +1,20 @@
+uuid: 6de352d2-4dc3-40ad-aff9-9ba845d43aed
+langcode: en
+status: true
+dependencies:
+  module:
+    - nttcom_calendar
+    - user
+id: calendar.field_user
+field_name: field_user
+entity_type: calendar
+type: entity_reference
+settings:
+  target_type: user
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

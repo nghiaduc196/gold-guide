@@ -1,0 +1,20 @@
+uuid: b8d2f780-1825-4116-9e6c-c60b943ca340
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - nttcom_calendar
+id: calendar.field_spot
+field_name: field_spot
+entity_type: calendar
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

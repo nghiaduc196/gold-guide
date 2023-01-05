@@ -1,0 +1,20 @@
+uuid: a4eaaa8a-ed6b-4a8b-9ec3-cf0237653219
+langcode: en
+status: true
+dependencies:
+  module:
+    - fivestar
+    - user
+id: user.field_ranking
+field_name: field_ranking
+entity_type: user
+type: fivestar
+settings:
+  vote_type: vote
+module: fivestar
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

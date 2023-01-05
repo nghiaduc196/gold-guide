@@ -1,0 +1,9 @@
+tips:
+  search-api-index-form-name:
+    label: インデックス名
+  search-api-index-form-tracker:
+    label: トラッカー
+  search-api-index-form-server:
+    label: サーバー
+  search-api-index-form-options:
+    label: 高度なオプション

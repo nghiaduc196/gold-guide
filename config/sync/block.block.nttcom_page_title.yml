@@ -1,0 +1,26 @@
+uuid: add6ea6e-7d44-41ba-bf01-325ad9a8cb42
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - nttcom
+_core:
+  default_config_hash: 6aOgWsNTXjqrDm98TXSAjP6qd2nCijD1xw45MrnbK-Y
+id: nttcom_page_title
+theme: nttcom
+region: content
+weight: -3
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/user/login\r\n/firebase-chat\r\n/spot"

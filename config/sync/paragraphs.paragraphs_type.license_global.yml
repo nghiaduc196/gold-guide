@@ -1,0 +1,10 @@
+uuid: 7a40776d-ca55-4768-b6b3-ea622f29449e
+langcode: en
+status: true
+dependencies: {  }
+id: license_global
+label: 'License Global'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,205 @@
+<?php
+
+/**
+ * @file
+ * Enables the user registration and login system.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\user\Plugin\Validation\Constraint\UserNameUnique;
+use Drupal\user\UserInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\user\Entity\User;
+
+define('ROLE_GUIDE', 'guide');
+
+/**
+ * Implements hook_form_alter().
+ */
+function nttcom_user_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+//  if ($form_id == 'change_pwd_form') {
+//    $form['#submit'][] = 'nttcom_user_return_page_login';
+//  }
+  if ($form_id == 'webform_submission_register_by_guide_add_form') {
+    if ($form['progress']['#current_page'] == 'register_by_guide') {
+      $form['actions']['submit']['#access'] = FALSE;
+    }
+    if ($form['progress']['#current_page'] == 'webform_preview') {
+//      $form['actions']['submit']['#access'] = FALSE;
+    }
+  }
+  if($form_id == 'user_register_form') {
+    $param = \Drupal::request()->query->all();
+    if (\Drupal::currentUser()->isAnonymous()) {
+      $form['account']['mail']['#default_value'] = $param['email_verification'];
+      $form['account']['mail']['#attributes'] = ['readonly' => 'readonly'];
+      $form['account']['pass']['#access'] = FALSE;
+    }
+    $form['user_picture']['#access'] = FALSE;
+    $form['contact']['#access'] = FALSE;
+    $form['#validate'][] = 'nttcom_user_form_user_post_validate';
+  }
+
+  if(in_array($form_id, ['user_register_form', 'user_form'])) {
+    if (\Drupal::currentUser()->isAnonymous() || in_array('guest',\Drupal::currentUser()->getRoles())) {
+      $form['field_price']['#access'] = FALSE;
+    }
+    $form['account']['current_pass']['#access'] = FALSE;
+    $form['account']['name']['#required'] = FALSE;
+    $form['account']['name']['#access'] = FALSE;
+    array_unshift($form['#validate'], 'nttcom_user_prepare_form_user_values');
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function nttcom_user_form_user_register_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Add a role to the registration form for user.
+//  $options = [
+//    'guest' => 'Guest',
+//    'guide' => 'Guide',
+//  ];
+//  $form['role_registration'] = [
+//    '#type' => 'select',
+//    '#options' => $options,
+//    '#default_value' => 'guest',
+//    '#title' => t("Choose role registration in site."),
+//    '#required' => TRUE,
+//  ];
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_presave().
+ */
+function nttcom_user_user_presave(EntityInterface $account) {
+  if (!empty($account->field_first_name->value) && !empty($account->field_last_name->value)) {
+    $full_name = trim($account->field_first_name->value ?? "").' '.trim($account->field_last_name->value ?? "");
+    $account->setUsername($full_name);
+  } else {
+    $account->setUsername($account->getEmail());
+  }
+  if (isset($account->original)) {
+    $original_role = $account->original->getRoles();
+    $updated_role = $account->getRoles();
+    if(!in_array('guide', $original_role) && in_array('guide', $updated_role)) {
+      $mailManager = \Drupal::service('plugin.manager.mail');
+      $message_body = t('Update role guide ');
+      $module = 'nttcom_user';
+      $key = 'add_role_guide'; // Replace with Your key
+      $to = $account->getEmail();
+      $params['message'] = $message_body;
+      $params['user_name'] = $account->getAccountName();
+      $langcode = \Drupal::currentUser()->getPreferredLangcode();
+      $send = TRUE;
+  
+      $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
+      if ($result['result'] !== TRUE) {
+        $message = t('There was a problem sending your email notification to @email.', ['@email' => $to]);
+        \Drupal::messenger()->addMessage($message, 'error');
+        \Drupal::logger('nttcom-user-mail')->error($message);
+      }
+      else {
+        $message = t('An email notification has been sent to @email ', ['@email' => $to]);
+        \Drupal::messenger()->addMessage($message);
+        \Drupal::logger('nttcom-user-mail')->info($message);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_mail().
+ */
+function nttcom_user_mail($key, &$message, $params) {
+  $options = array(
+    'langcode' => $message['langcode'],
+  );
+  switch ($key) {
+    case 'add_role_guide':
+      $message['from'] = \Drupal::config('system.site')->get('mail');
+      $message['subject'] = t('Nttcom change role in user: @user', ['@user' => $params['user_name']], $options);
+      $message['body'][] = $params['message'];
+      break;
+    case 'code_verification_exist_mail':
+      $message['from'] = \Drupal::config('system.site')->get('mail');
+      $message['subject'] = t('Nttcom code verification exist email: @mail', ['@mail' => $params['mail']], $options);
+      $message['body'][] = $params['message'];
+  }
+}
+
+/**
+ * Copy the full name if $lastname and $firstname is not null
+ * copy the 'mail' field if $lastname and $firstname is null
+ * to the 'name' field before form validation.
+ *
+ * @param array $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ */
+function nttcom_user_prepare_form_user_values(&$form, FormStateInterface $form_state) {
+  if (!empty($form_state->getValue('field_first_name')) && !empty($form_state->getValue('field_last_name'))) {
+    $first_name = trim($form_state->getValue('field_first_name')[0]['value'] ?? "");
+    $last_name = trim($form_state->getValue('field_last_name')[0]['value'] ?? "");
+    $full_name = $first_name.' '.$last_name;
+  }
+  $name = $form_state->getValue('mail');
+  if ($user = user_load_by_name($full_name ?? $name)) {
+    /** @var \Drupal\Core\Entity\EntityFormInterface $formObject */
+    $formObject = $form_state->getFormObject();
+    
+    if ($user->id() != $formObject->getEntity()->id()) {
+      $constraint = new UserNameUnique();
+      if (isset($full_name)) {
+        $form_state->setErrorByName('field_first_name', t($constraint->message, ['%value' => $full_name]));
+        $form_state->setErrorByName('field_last_name', t($constraint->message, ['%value' => $full_name]));
+      }
+      else {
+        $form_state->setErrorByName('mail', t($constraint->message, ['%value' => $name]));
+      }
+    }
+  }
+  
+  if (isset($full_name)) {
+    if ($error = user_validate_name($full_name)) {
+      $form_state->setErrorByName('field_first_name', $error);
+      $form_state->setErrorByName('field_last_name', $error);
+    }
+  }
+  else {
+    if ($error = user_validate_name($name)) {
+      $form_state->setErrorByName('mail', $error);
+    }
+  }
+  
+  $form_state->setValue('name', $full_name ?? $name);
+}
+
+/**
+ * Remove the errors related to 'name' field.
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ */
+function nttcom_user_form_user_post_validate(&$form, FormStateInterface $form_state) {
+  $errors = $form_state->getErrors();
+  unset($errors['name']);
+  $form_state->clearErrors();
+  foreach($errors as $field => $value) {
+    $form_state->setErrorByName($field, $value);
+  }
+}
+
+function nttcom_user_return_page_login(array &$form, FormStateInterface $form_state) {
+  $form_state->setRedirect('<front>');
+  user_logout();
+}
+
+function nttcom_user_user_login(UserInterface $account) {
+  if (in_array('administrator', $account->getRoles()) || in_array('office', $account->getRoles())) {
+    \Drupal::service('request_stack')->getCurrentRequest()->query->set('destination', '/');
+  }
+    if (!in_array('guide', $account->getRoles()) && !in_array('office', $account->getRoles()) &&
+     !in_array('administrator', $account->getRoles())) {
+    $user = User::load($account->id());
+    $user->addRole('guest');
+  }
+}

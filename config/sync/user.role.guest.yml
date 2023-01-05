@@ -1,0 +1,10 @@
+uuid: 04e91f43-0ba8-4e56-a562-f0633e6631a1
+langcode: en
+status: true
+dependencies: {  }
+id: guest
+label: Customer
+weight: 5
+is_admin: null
+permissions:
+  - 'cancel account'

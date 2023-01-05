@@ -1,0 +1,19 @@
+tips:
+  search-api-index-index-status:
+    label: インデックスのステータス
+  search-api-index-status:
+    label: 状態
+  search-api-index-tracker:
+    label: トラッカー
+  search-api-index-server:
+    label: サーバー
+  search-api-index-server-index-status:
+    label: サーバーのインデックス状況
+  search-api-index-index-now:
+    label: 今すぐにインデックスを行う
+    body: 「今すぐにインデックスを行う」を押すと、バッチ処理を利用してその場でアイテムをインデックスすることができます。押さなければ、Cronの実行時にしかインデックスが行われません。何らかの理由でインデックスが不可能な場合や、必要ではない場合は、このフォームは無効化されます。
+  search-api-index-reindex:
+    label: 全てのアイテムをインデックス待ちの状態にする
+    body: 全てのアイテムをインデックス待ちの状態にします。このインデックスに対する検索が引き続き行えるように、過去のインデックスデータは検索サーバーに残されます。
+  search-api-index-clear:
+    label: 全てのインデックスデータを削除する

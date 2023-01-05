@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * Enables the nttc booking.
+ */
+
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Component\Utility\Random;
+
+/**
+ * Implements hook_form_alter().
+ */
+function nttcom_booking_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $user = \Drupal::entityTypeManager()->getStorage('user')->load(\Drupal::currentUser()->id());
+  if($form_id == 'webform_submission_guest_booking_add_form') {
+    if (isset($form['progress']['#current_page']) &&
+      $form['progress']['#current_page'] == 'infomation_guest') {
+      $form['elements']['infomation_guest']['name']['#default_value'] = $user->name->value;
+      $form['elements']['infomation_guest']['user_id']['#default_value'] = $user->uid->value;
+      $form['elements']['infomation_guest']['email']['#default_value'] = $user->mail->value;
+    }
+    if (isset($form['progress']['#current_page']) &&
+      $form['progress']['#current_page'] == 'infomation_booking') {
+      $random = new Random();
+      $code_booking = "NTT-".$random->name(8, TRUE);
+      $form['actions']['submit']['#access'] = FALSE;
+      $form['elements']['infomation_booking']['code_booking']['#default_value'] = $code_booking;
+    }
+  }
+}

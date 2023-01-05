@@ -1,0 +1,20 @@
+uuid: 477a0597-e7d9-4f8a-bbc5-08a5ec0aed6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_intro
+  module:
+    - user
+id: user.user.field_intro
+field_name: field_intro
+entity_type: user
+bundle: user
+label: Intro
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

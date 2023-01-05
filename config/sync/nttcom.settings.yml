@@ -1,0 +1,21 @@
+langcode: ja
+favicon:
+  use_default: true
+features:
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: true
+  node_user_picture: true
+logo:
+  use_default: true
+b4_top_container: 'container-fluid m-0 p-0'
+b4_top_container_config: ''
+b4_body_schema: dark
+b4_body_bg_schema: none
+b4_navbar_schema: dark
+b4_navbar_bg_schema: none
+b4_footer_schema: dark
+b4_footer_bg_schema: none
+subtheme_folder: themes/custom
+subtheme_name: 'B4 subtheme'
+subtheme_machine_name: b4subtheme

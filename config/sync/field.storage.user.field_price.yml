@@ -1,0 +1,20 @@
+uuid: 48f0efb4-168d-418e-8dbf-a9b03edf1510
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_price
+field_name: field_price
+entity_type: user
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

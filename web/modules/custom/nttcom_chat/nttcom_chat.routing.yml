@@ -1,0 +1,46 @@
+nttcom_chat.form_chat:
+  path: '/demo-chat'
+  defaults:
+    _form: '\Drupal\nttcom_chat\Form\FormChat'
+  requirements:
+    _permission: 'TRUE'
+
+nttcom_chat.sync_user_firebase:
+  path: 'sync-user-firebase'
+  defaults:
+    _controller: '\Drupal\nttcom_chat\Controller\ChatAjaxController::syncUserFirebase'
+    _title: 'Get Config Firebase'
+  requirements:
+    _permission: 'TRUE'
+
+nttcom_chat.get-users:
+  path: 'get-user'
+  defaults:
+    _controller: '\Drupal\nttcom_chat\Controller\ChatAjaxController::getUsers'
+    _title: 'Get User'
+  requirements:
+    _permission: 'TRUE'
+
+nttcom_chat.get-connect-user:
+  path: 'connect-user'
+  defaults:
+    _title: 'Get connect user'
+    _controller: '\Drupal\nttcom_chat\Controller\ChatAjaxController::connectUser'
+  requirements:
+    _permission: 'TRUE'
+
+nttcom_chat.chat-with-firebase:
+  path: 'firebase-chat'
+  defaults:
+    _title: 'Chat with Firebase'
+    _controller: '\Drupal\nttcom_chat\Controller\ChatAjaxController::content'
+  requirements:
+    _permission: 'TRUE'
+
+nttcom_chat.configuration_firebase:
+  path: '/admin/config-firebase'
+  defaults:
+    _title: 'Configuration Firebase'
+    _form: '\Drupal\nttcom_chat\Form\FormConfigFirebase'
+  requirements:
+    _permission: 'access content'

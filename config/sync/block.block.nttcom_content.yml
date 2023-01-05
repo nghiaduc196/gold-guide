@@ -1,0 +1,22 @@
+uuid: 2a3c1261-8887-4bec-8cab-cd43c89decaa
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - nttcom
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: nttcom_content
+theme: nttcom
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

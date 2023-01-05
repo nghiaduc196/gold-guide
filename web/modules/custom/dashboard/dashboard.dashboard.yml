@@ -1,0 +1,35 @@
+dashboard:
+  url: admin
+  title: Dashboard
+  access arguments:
+    - access administration pages
+
+dashboard_menu_groups:
+  - Today Orders
+  - Today Inquiries
+
+dashboard_menu:
+  master-users:
+    group: Today Orders
+    title: "Orders : 25"
+    icon: users
+    url: /admin/people
+    uri: http://akares.vn:8003/admin/people
+
+  power-users:
+    group: Today Inquiries
+    title: "Inquiries: 100"
+    icon: users
+    url: /admin/people
+
+  master-roles:
+    group: Today Orders
+    title: "Other : 10"
+    icon: roles
+    url: /admin/people/roles
+
+  power-roles:
+    group: Today Inquiries
+    title: "Other : 40"
+    icon: roles
+    url: /admin/people/roles

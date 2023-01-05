@@ -1,0 +1,14 @@
+uuid: a616a5d3-c756-4691-8d54-8d67fcfde3da
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.guide
+  module:
+    - user
+id: user_add_role_action.guide
+label: 'Add the Guide role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: guide

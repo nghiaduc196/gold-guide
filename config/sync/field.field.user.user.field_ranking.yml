@@ -1,0 +1,29 @@
+uuid: 2e53d669-c934-4623-a90d-1769c9f33b03
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_ranking
+  module:
+    - fivestar
+    - user
+id: user.user.field_ranking
+field_name: field_ranking
+entity_type: user
+bundle: user
+label: Ranking
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  stars: 5
+  allow_clear: false
+  allow_revote: true
+  allow_ownvote: true
+  rated_while: editing
+  enable_voting_target: false
+  target_bridge_field: ''
+  target_fivestar_field: ''
+field_type: fivestar

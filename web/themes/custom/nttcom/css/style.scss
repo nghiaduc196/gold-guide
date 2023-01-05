@@ -1,0 +1,357 @@
+//#header .bg-white{
+//  height: 60px;
+//  left: 0px;
+//  top: 0px;
+//  background: #FFFFFF;
+//  box-shadow: 4px 4px 9px rgba(29, 29, 29, 0.25);
+//  color: #FFFFFF;
+//}
+//
+//#header .navbar-nav .nav-item a {
+//  color: #7A5F1B;
+//}
+//#header .navbar-nav .nav-item a:hover{
+//  text-decoration: none;
+//}
+//
+//.dropdown-menu-anonymous {
+//  left: -55px;
+//}
+//.dropdown-menu-authenticated {
+//  left: -110px;
+//}
+//
+//.guide-login {
+//  background: #dcc5a5;
+//  min-height: 700px;
+//}
+//.office-login {
+//  background: #cfdea9;
+//  min-height: 700px;
+//}
+//.customer-login {
+//  background: #ffd1d3;
+//  min-height: 700px;
+//}
+//.login-title {
+//  font-size: 28px;
+//  font-weight: bold;
+//}
+//
+//.g-recaptcha {
+//  margin: 15px 0;
+//}
+
+.header {
+  background-color: #1A4A82;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  .site-logo {
+    @media only screen and (max-width: 992px) {
+      width: 100%;
+      display: flex;
+    }
+    .navbar-toggler {
+      margin-left: auto;
+    }
+  }
+  .navbar-toggler {
+    border: none !important;
+    outline: none;
+  }
+  .navbar {
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    @media only screen and (max-width: 768px) {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+  .header-right {
+    a {
+      margin-left: 40px;
+      span {
+        margin-left: 15px;
+        color: #ffffff;
+      }
+      @media only screen and (max-width: 992px) {
+        margin-left: 0;
+        margin-right: 40px;
+      }
+    }
+  }
+  nav {
+    color: #ffffff;
+  }
+}
+
+// Page Place
+.top-0 {
+  top: 0;
+}
+.right-0 {
+  right: 0;
+}
+.left-0 {
+  left: 0;
+}
+.bottom-0 {
+  bottom: 0;
+}
+.page-spot {
+  //background: red;
+
+  .banner {
+    background-image: url("../images/icons/bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 400px;
+    @media only screen and (max-width: 768px) {
+      height: 260px;
+    }
+    .wrapper {
+      background-color: #000;
+      opacity: 0.12;
+    }
+    .text {
+      z-index: 1;
+      font-family: 'Bebas Neue';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 48px;
+      line-height: 58px;
+      @media only screen and (max-width: 768px) {
+        font-size: 36px;
+      }
+
+    }
+  }
+
+  .content {
+    background-color: #ffffff;
+    position: relative;
+    top: -20px;
+    border-radius: 20px 20px 0 0;
+    font-family: 'Bebas Neue';
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 100px;
+
+    @media only screen and (max-width: 992px) {
+      padding-left: 20px;
+      padding-right: 20px;
+
+      border-radius: 15px 15px 0 0;
+    }
+
+    @media only screen and (max-width: 768px) {
+      padding-left: 12px;
+      padding-right: 12px;
+      border-radius: 12px 12px 0 0;
+    }
+
+
+    .title {
+      padding-top: 36px;
+      h2 {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 48px;
+        line-height: 58px;
+        text-align: center;
+        color: #1A4A82;
+        @media only screen and (max-width: 768px) {
+          font-size: 36px;
+        }
+
+      }
+      span {
+        font-family: 'Hiragino Kaku Gothic Pro';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        color: #172432;
+        @media only screen and (max-width: 768px) {
+          font-size: 12px;
+        }
+      }
+    }
+    .title-main {
+      font-family: 'Hiragino Kaku Gothic Pro';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 54px;
+      color: #000000;
+      margin-bottom: 17px;
+      margin-top: 28px;
+      @media only screen and (max-width: 768px) {
+        font-size: 18px;
+        line-height: 27px;
+      }
+
+    }
+
+    .main {
+
+      .card-custom {
+        background: #FFFFFF;
+        box-shadow: 0 2px 8px rgba(59, 59, 59, 0.24);
+        border-radius: 8px;
+        margin-bottom: 40px;
+        .body-image {
+          position: relative;
+          img {
+            border-radius: 8px 8px 0 0;
+          }
+          .form-check {
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            .container {
+              display: block;
+              position: relative;
+              padding-left: 35px;
+              margin-bottom: 12px;
+              cursor: pointer;
+              font-size: 22px;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none;
+            }
+
+            .container input {
+              position: absolute;
+              opacity: 0;
+              cursor: pointer;
+              height: 0;
+              width: 0;
+            }
+
+            .checkmark {
+              position: absolute;
+              top: 6px;
+              right: 6px;
+              height: 35px;
+              width: 35px;
+              border-radius: 6px;
+              background-color: #ffffff;
+              background-image: url("../images/icons/check.svg");
+              background-position: center;
+              background-repeat: no-repeat;
+            }
+
+            .container:hover input ~ .checkmark {
+              opacity: 0.9;
+            }
+
+            .container input:checked ~ .checkmark {
+              background-color: #ffffff;
+              box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+            }
+
+            .checkmark:after {
+              content: "";
+              position: absolute;
+              display: none;
+            }
+
+            .container input:checked ~ .checkmark:after {
+              display: block;
+            }
+
+            .container .checkmark:after {
+              width: 35px;
+              height: 35px;
+              background-image: url("../images/icons/check-on.svg");
+              background-position: center;
+              background-repeat: no-repeat;
+              background-color: #FFC524;
+              border-radius: 6px;
+            }
+          }
+        }
+        .body-content {
+          padding: 20px;
+
+          @media only screen and (max-width: 768px) {
+            padding: 11px 20px;
+          }
+
+          h4 {
+            font-family: 'Hiragino Kaku Gothic Pro';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 30px;
+            color: #000000;
+            margin-bottom: 8px;
+
+            @media only screen and (max-width: 768px) {
+              font-size: 18px;
+              line-height: 27px;
+              margin-bottom: 4px;
+            }
+
+          }
+          span {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            font-family: 'Hiragino Kaku Gothic Pro';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 21px;
+            color: #000000;
+
+            @media only screen and (max-width: 768px) {
+              font-size: 12px;
+              line-height: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+.modal-tutorial {
+  position: fixed;
+  bottom: 0;
+  background: rgba(22, 24, 35, 0.75);
+  left: 0;
+  right: 0;
+  text-align: center;
+  height: 92px;
+  @media only screen and (max-width: 768px) {
+    top: calc(100vh - 72px);
+    height: 72px;
+  }
+
+  button {
+    width: 366px;
+    height: 60px;
+    background: #FFC524;
+    box-shadow: 0px 0px 28px rgba(59, 59, 59, 0.24) !important;
+    border-radius: 999999px;
+    border: none;
+
+    span {
+      font-family: 'Hiragino Kaku Gothic Pro';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 30px;
+      color: #ffffff;
+    }
+  }
+}

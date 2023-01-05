@@ -1,0 +1,25 @@
+uuid: ad22fb87-484f-4b46-917a-3e0be7835f04
+langcode: en
+status: true
+dependencies:
+  module:
+    - nttcom_calendar
+    - system
+  theme:
+    - nttcom
+id: nttcalendar
+theme: nttcom
+region: content
+weight: -1
+provider: null
+plugin: nttcom_calendar_calendar
+settings:
+  id: nttcom_calendar_calendar
+  label: 'NTT Calendar'
+  label_display: '0'
+  provider: nttcom_calendar
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /my-calendar

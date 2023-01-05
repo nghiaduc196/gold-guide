@@ -1,0 +1,8 @@
+uuid: 08ec4a03-891f-44fa-ab0c-f6739ccf1cd1
+langcode: ja
+status: true
+dependencies: {  }
+name: Areas
+vid: areas
+description: ''
+weight: 0

@@ -1,0 +1,22 @@
+uuid: dd57b88b-1b30-4e31-bd60-3ce6820ea102
+langcode: ja
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: areas
+label: Areas
+type: 'canonical_entities:taxonomy_term'
+pattern: '/area/[term:name]'
+selection_criteria:
+  9f357940-f5fa-4b55-8f61-0daf5e491b58:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 9f357940-f5fa-4b55-8f61-0daf5e491b58
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      areas: areas
+selection_logic: and
+weight: -5
+relationships: {  }

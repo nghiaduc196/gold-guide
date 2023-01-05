@@ -1,0 +1,3 @@
+administer calendar:
+  title: 'Administer calendar settings'
+  restrict access: true

@@ -1,0 +1,35 @@
+<?php
+
+function nttcom_chat_schema() {
+  $schema['nttcom_chat'] = [
+    'description' => 'Stores module data as key/value pairs per user.',
+    'fields' => [
+      'chat_uuid' => [
+        'description' => 'Chat uuid record',
+        'type' => 'varchar',
+        'length' => '255',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'user_1_uuid' => [
+        'description' => 'User 1 uuid',
+        'type' => 'varchar',
+        'length' => '255',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'user_2_uuid' => [
+        'description' => 'User 2 uuid',
+        'type' => 'varchar',
+        'length' => '255',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+    ],
+    'primary key' => [
+      'chat_uuid',
+    ],
+
+  ];
+  return $schema;
+}

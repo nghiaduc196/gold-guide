@@ -1,0 +1,14 @@
+<?php
+
+function nttcom_chat_theme($existing, $type, $theme, $path) {
+  return [
+//    'nttcom_chat_blank' => [
+//      'render element' => 'page',
+//      'template' => 'chat'
+//    ],
+    'nttcom_chat_blank' => [
+      'render element' => 'children',
+      'template' => 'test-page'
+    ]
+  ];
+}

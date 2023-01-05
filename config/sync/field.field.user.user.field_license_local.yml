@@ -1,0 +1,34 @@
+uuid: c139809c-c906-42a6-b309-bef8a670900a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_license_local
+    - paragraphs.paragraphs_type.license_local
+  module:
+    - entity_reference_revisions
+    - user
+id: user.user.field_license_local
+field_name: field_license_local
+entity_type: user
+bundle: user
+label: 'License Local'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      license_local: license_local
+    negate: 0
+    target_bundles_drag_drop:
+      license_global:
+        weight: 4
+        enabled: false
+      license_local:
+        weight: 3
+        enabled: true
+field_type: entity_reference_revisions

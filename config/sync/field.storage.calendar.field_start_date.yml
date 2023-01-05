@@ -1,0 +1,20 @@
+uuid: aea76bf4-793a-4c4c-af60-277218926a9d
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - nttcom_calendar
+id: calendar.field_start_date
+field_name: field_start_date
+entity_type: calendar
+type: datetime
+settings:
+  datetime_type: datetime
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

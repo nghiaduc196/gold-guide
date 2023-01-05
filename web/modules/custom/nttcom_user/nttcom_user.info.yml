@@ -1,0 +1,5 @@
+name: Nttcom User
+type: module
+description: Custom workflow user
+core_version_requirement: ^8.8 || ^9
+package: Nttcom Custom

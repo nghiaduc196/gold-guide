@@ -1,0 +1,9 @@
+label: 言語を追加
+tips:
+  language-add-overview:
+    label: 言語を追加
+    body: '<p>このページはあなたのサイトに共通の言語を追加する能力を与えます。</p><p>もし望みの言語が利用できなければ、カスタム言語を追加する事ができます。</p>'
+  language-add-choose:
+    label: 言語の選択
+  language-add-continue:
+    label: 続き

@@ -1,0 +1,9 @@
+entity.calendar.settings:
+  title: 'Settings'
+  route_name: entity.calendar.settings
+  base_route: entity.calendar.settings
+entity.calendar.collection:
+  title: 'Calendars'
+  route_name: entity.calendar.collection
+  base_route: system.admin_content
+  weight: 10

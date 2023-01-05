@@ -1,0 +1,5 @@
+calendar.add_form:
+  title: 'Add calendar'
+  route_name: entity.calendar.add_form
+  appears_on:
+    - entity.calendar.collection
