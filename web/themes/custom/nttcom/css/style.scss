@@ -41,7 +41,9 @@
 //.g-recaptcha {
 //  margin: 15px 0;
 //}
-
+a {
+  text-decoration: none !important;
+}
 .header {
   background-color: #1A4A82;
   position: sticky;
@@ -102,6 +104,7 @@
 }
 .page-spot {
   //background: red;
+  padding-bottom: 100px;
 
   .banner {
     background-image: url("../images/icons/bg.png");
@@ -138,7 +141,6 @@
     font-family: 'Bebas Neue';
     padding-left: 40px;
     padding-right: 40px;
-    padding-bottom: 100px;
 
     @media only screen and (max-width: 992px) {
       padding-left: 20px;
@@ -323,6 +325,76 @@
     }
   }
 
+  .carousel-custom {
+    margin-top: 20px;
+    padding-left: 55px;
+    z-index: -1;
+
+    @media only screen and (max-width: 992px) {
+      padding-left: 35px;
+    }
+
+    @media only screen and (max-width: 768px) {
+      padding-left: 27px;
+    }
+
+    .owl-carousel {
+      cursor: pointer;
+    }
+    .title {
+      font-family: 'Hiragino Kaku Gothic Pro';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 54px;
+      margin-bottom: 20px;
+      @media only screen and (max-width: 768px) {
+        font-size: 18px;
+        line-height: 27px;
+        margin-bottom: 12px;
+      }
+    }
+    .item {
+      .body-image {
+        img {
+          background: #FFFFFF;
+          box-shadow: 0 2px 8px rgba(59, 59, 59, 0.24);
+          border-radius: 8px;
+          height: 273px;
+          object-fit: cover;
+          @media only screen and (max-width: 992px) {
+            height: 220px;
+          }
+
+          @media only screen and (max-width: 768px) {
+            height: 155px;
+          }
+
+        }
+      }
+      .body-content {
+        margin-top: 8px;
+        @media only screen and (max-width: 768px) {
+          margin-top: 11px;
+        }
+        .title-content {
+          font-family: 'Hiragino Kaku Gothic Pro';
+          font-style: normal;
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 27px;
+          color: #000000;
+
+          @media only screen and (max-width: 768px) {
+            font-size: 14px;
+            line-height: 21px;
+          }
+
+        }
+      }
+    }
+  }
+
 }
 .modal-tutorial {
   position: fixed;
@@ -332,6 +404,7 @@
   right: 0;
   text-align: center;
   height: 92px;
+  z-index: 1;
   @media only screen and (max-width: 768px) {
     top: calc(100vh - 72px);
     height: 72px;

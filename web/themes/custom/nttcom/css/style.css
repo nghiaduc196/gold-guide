@@ -1,3 +1,7 @@
+a {
+  text-decoration: none !important;
+}
+
 .header {
   background-color: #1A4A82;
   position: sticky;
@@ -60,6 +64,9 @@
   bottom: 0;
 }
 
+.page-spot {
+  padding-bottom: 100px;
+}
 .page-spot .banner {
   background-image: url("../images/icons/bg.png");
   background-repeat: no-repeat;
@@ -97,7 +104,6 @@
   font-family: "Bebas Neue";
   padding-left: 40px;
   padding-right: 40px;
-  padding-bottom: 100px;
 }
 @media only screen and (max-width: 992px) {
   .page-spot .content {
@@ -273,6 +279,78 @@
     line-height: 18px;
   }
 }
+.page-spot .carousel-custom {
+  margin-top: 20px;
+  padding-left: 55px;
+  z-index: -1;
+}
+@media only screen and (max-width: 992px) {
+  .page-spot .carousel-custom {
+    padding-left: 35px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .page-spot .carousel-custom {
+    padding-left: 27px;
+  }
+}
+.page-spot .carousel-custom .owl-carousel {
+  cursor: pointer;
+}
+.page-spot .carousel-custom .title {
+  font-family: "Hiragino Kaku Gothic Pro";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 54px;
+  margin-bottom: 20px;
+}
+@media only screen and (max-width: 768px) {
+  .page-spot .carousel-custom .title {
+    font-size: 18px;
+    line-height: 27px;
+    margin-bottom: 12px;
+  }
+}
+.page-spot .carousel-custom .item .body-image img {
+  background: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(59, 59, 59, 0.24);
+  border-radius: 8px;
+  height: 273px;
+  object-fit: cover;
+}
+@media only screen and (max-width: 992px) {
+  .page-spot .carousel-custom .item .body-image img {
+    height: 220px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .page-spot .carousel-custom .item .body-image img {
+    height: 155px;
+  }
+}
+.page-spot .carousel-custom .item .body-content {
+  margin-top: 8px;
+}
+@media only screen and (max-width: 768px) {
+  .page-spot .carousel-custom .item .body-content {
+    margin-top: 11px;
+  }
+}
+.page-spot .carousel-custom .item .body-content .title-content {
+  font-family: "Hiragino Kaku Gothic Pro";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  color: #000000;
+}
+@media only screen and (max-width: 768px) {
+  .page-spot .carousel-custom .item .body-content .title-content {
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
 
 .modal-tutorial {
   position: fixed;
@@ -282,6 +360,7 @@
   right: 0;
   text-align: center;
   height: 92px;
+  z-index: 1;
 }
 @media only screen and (max-width: 768px) {
   .modal-tutorial {

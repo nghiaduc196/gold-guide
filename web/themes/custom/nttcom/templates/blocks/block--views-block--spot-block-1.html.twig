@@ -1,0 +1,17 @@
+<div class="carousel-custom">
+  <h3 class="title">{{ content['#title']['#markup'] }}</h3>
+  <div class="owl-carousel owl-theme">
+    {% for spot in content['#view'].result %}
+      <div class="item">
+        <div class="card-title">
+          <div class="body-image">
+            <img src="{{ file_url(spot._entity.field_image.entity.uri.value) }}"/>
+          </div>
+          <div class="body-content">
+            <span class="title-content">{{ spot._entity.title.value }}</span>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

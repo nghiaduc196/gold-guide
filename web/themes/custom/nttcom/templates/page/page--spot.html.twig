@@ -6,15 +6,19 @@
   </div>
 {% endif %}
 
-
-
 <div class="page-spot">
   <div class="banner position-relative d-flex align-items-center justify-content-center">
     <span class="text-uppercase font-weight-bolder text-white text">OSAKA</span>
     <div class="wrapper position-absolute top-0 left-0 right-0 bottom-0 m-auto"></div>
   </div>
+  <div class="content">
+    {{ page.content }}
+  </div>
 
-  {{ page.content }}
+  {% if page.spot_bottom %}
+      {{ page.spot_bottom }}
+  {% endif %}
+
 </div>
 
 <div class="modal-tutorial d-flex align-items-center justify-content-center">
