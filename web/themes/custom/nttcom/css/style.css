@@ -22,8 +22,15 @@ a {
   outline: none;
 }
 .header .navbar {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.header .navbar .navbar-collapse {
   padding-top: 5px;
   padding-bottom: 5px;
+}
+.header .navbar .navbar-collapse .dropdown-menu {
+  margin-top: 0;
 }
 @media only screen and (max-width: 768px) {
   .header .navbar {
@@ -31,18 +38,10 @@ a {
     padding-bottom: 0;
   }
 }
-.header .header-right a {
-  margin-left: 40px;
-}
-.header .header-right a span {
-  margin-left: 15px;
-  color: #ffffff;
-}
-@media only screen and (max-width: 992px) {
-  .header .header-right a {
-    margin-left: 0;
-    margin-right: 40px;
-  }
+.header .header-right .dropdown-toggle:after {
+  display: none;
+  width: 0;
+  height: 0;
 }
 .header nav {
   color: #ffffff;

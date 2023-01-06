@@ -41,35 +41,64 @@
 {#</ul>#}
 
 
-<div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
+<div class="collapse navbar-collapse ml-auto position-relative" id="navbarSupportedContent">
   <div class="form-inline my-2 my-lg-0 header-right ml-auto">
 
     {% if logged_in %}
-      <a href="#" class="d-flex align-items-center">
+      <a href="#" class="nav-link d-flex align-items-center">
         <img src="/{{ directory ~'/images/icons/icon_faq.svg' }}">
-        <span >FAQ</span>
+        <span class="text-white ml-2">{{ "FAQ"|t }}</span>
       </a>
-      <a href="#" class="d-flex align-items-center">
+      <a href="#" class="nav-link d-flex align-items-center">
         <img src="/{{ directory ~'/images/icons/icon_browser.svg' }}">
-        <span >日本語</span>
+        <span class="text-white ml-2">{{ "日本語"|t }}</span>
       </a>
-      <a href="{{ language }}/user/logout" class="d-flex align-items-center">
-        <img src="/{{ directory ~'/images/icons/icon_person.svg' }}">
-        <span >sign out</span>
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+         aria-haspopup="true" aria-expanded="false">
+        <img src="/{{ directory ~'/images/icons/icon_person.svg' }}" width="20"
+             height="21">
+        <span class="text-white ml-2">{{ "sign out"|t }}</span>
       </a>
+      {% if items %}
+        <div class="dropdown-menu dropdown-menu-authenticated dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+          {% for item in items %}
+            <div{{ item.attributes.addClass(['dropdown-item']) }}>
+              {{ link(item.title, item.url) }}
+              {% if item.below %}
+                {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+
     {% else %}
-      <a href="#" class="d-flex align-items-center">
+      <a href="#" class="nav-link d-flex align-items-center">
         <img src="/{{ directory ~'/images/icons/icon_faq.svg' }}">
-        <span >FAQ</span>
+        <span class="text-white ml-2">{{ "FAQ"|t }}</span>
       </a>
-      <a href="#" class="d-flex align-items-center">
+      <a href="#" class="nav-link d-flex align-items-center">
         <img src="/{{ directory ~'/images/icons/icon_browser.svg' }}">
-        <span >日本語</span>
+        <span class="text-white ml-2">{{ "日本語"|t }}</span>
       </a>
-      <a href="{{ language }}/user/login" class="d-flex align-items-center">
-        <img src="/{{ directory ~'/images/icons/icon_person.svg' }}">
-        <span >sign in</span>
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+         aria-haspopup="true" aria-expanded="false">
+        <img src="/{{ directory ~'/images/icons/icon_person.svg' }}" width="20"
+             height="21">
+        <span class="text-white">{{ "Sign In"|t }}</span>
       </a>
+      <div class="dropdown-menu dropdown-menu-anonymous dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+        <div class="dropdown-item">
+          <a href="{{ path('user.login',{'type':'guest'}) }}">{{ "For Guest" }}</a>
+        </div>
+        <div class="dropdown-item">
+          <a href="{{ path('user.login',{'type':'guide'}) }}">{{ "For Guide" }}</a>
+        </div>
+        <div class="dropdown-item">
+          <a href="{{ path('user.login',{'type':'system'}) }}">{{ "For System" }}</a>
+        </div>
+      </div>
     {% endif %}
   </div>
 </div>
+

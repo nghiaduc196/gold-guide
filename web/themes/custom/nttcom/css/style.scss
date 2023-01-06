@@ -63,8 +63,15 @@ a {
     outline: none;
   }
   .navbar {
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    .navbar-collapse {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      .dropdown-menu {
+        margin-top: 0;
+      }
+    }
 
     @media only screen and (max-width: 768px) {
       padding-top: 0;
@@ -72,15 +79,11 @@ a {
     }
   }
   .header-right {
-    a {
-      margin-left: 40px;
-      span {
-        margin-left: 15px;
-        color: #ffffff;
-      }
-      @media only screen and (max-width: 992px) {
-        margin-left: 0;
-        margin-right: 40px;
+    .dropdown-toggle {
+      &:after {
+        display: none;
+        width: 0;
+        height: 0;
       }
     }
   }
