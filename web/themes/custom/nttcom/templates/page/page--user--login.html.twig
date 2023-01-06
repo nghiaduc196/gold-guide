@@ -1,12 +1,11 @@
 <div class="user-login-page {{ role_login }}">
 
   {% if page.header %}
-    <div class="header d-flex align-items-center">
-      <nav class="navbar navbar-expand-lg w-100">
-        {{ page.header }}
-      </nav>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-header py-1 py-md-2">
+      {{ page.header }}
+    </nav>
   {% endif %}
+
 
     <div class="login-box col-12 justify-content-center">
       <div class="col-6 mx-auto">
