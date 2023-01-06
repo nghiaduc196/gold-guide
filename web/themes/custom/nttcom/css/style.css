@@ -254,6 +254,9 @@ a {
   color: #000000;
   margin-bottom: 8px;
 }
+.page-spot .content .main .card-custom .body-content h4 a {
+  color: #000000;
+}
 @media only screen and (max-width: 768px) {
   .page-spot .content .main .card-custom .body-content h4 {
     font-size: 18px;

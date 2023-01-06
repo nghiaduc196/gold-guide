@@ -11,7 +11,13 @@
       <div class="col-lg-4 col-md-6 col-sm-12">
         <div class="card-custom">
           <div class="body-image">
-            <img class="w-100" src="{{ file_url(spot.field_image.entity.fileuri) }}"/>
+            <a href="{{ path('entity.node.canonical', {'node': spot.id}) }}">
+              {% if spot.field_image.entity.fileuri %}
+                <img class="w-100" src="{{ file_url(spot.field_image.entity.fileuri) }}"/>
+              {% else %}
+                <img class="w-100" src="/themes/custom/nttcom/images/default-spot.png"/>
+              {% endif %}
+            </a>
             <div class="form-check">
               <label class="container">
                 <input type="checkbox" {{ spot.published ? 'checked' : '' }}>
@@ -20,7 +26,7 @@
             </div>
           </div>
           <div class="body-content">
-            <h4>{{ spot.title.value }}</h4>
+            <h4><a href="{{ path('entity.node.canonical', {'node': spot.id}) }}">{{ spot.title.value }}</a></h4>
             <span>{{ spot.body.value }}</span>
           </div>
         </div>

@@ -5,10 +5,16 @@
       <div class="item">
         <div class="card-title">
           <div class="body-image">
-            <img src="{{ file_url(spot._entity.field_image.entity.uri.value) }}"/>
+            <a href="{{ path('entity.node.canonical', {'node': spot._entity.id}) }}">
+              {% if spot._entity.field_image.entity.uri.value %}
+                <img class="w-100" src="{{ file_url(spot._entity.field_image.entity.uri.value) }}"/>
+              {% else %}
+                <img class="w-100" src="/themes/custom/nttcom/images/default-spot.png"/>
+              {% endif %}
+            </a>
           </div>
           <div class="body-content">
-            <span class="title-content">{{ spot._entity.title.value }}</span>
+            <a href="{{ path('entity.node.canonical', {'node': spot._entity.id}) }}"><span class="title-content">{{ spot._entity.title.value }}</span></a>
           </div>
         </div>
       </div>
