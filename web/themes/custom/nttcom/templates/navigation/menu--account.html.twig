@@ -1,19 +1,26 @@
 <ul class="navbar-nav ml-auto">
-
   {% if logged_in %}
 
     <li class="nav-item">
-      <a href="#" class="nav-link">
+      <a href="#" class="nav-link d-flex align-items-center">
         <img src="/{{ directory ~'/images/icons/icon_faq.svg' }}">
         <span class="text-white ml-2">{{ "FAQ"|t }}</span>
       </a>
     </li>
 
-    <li class="nav-item dropdown">
-      <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+    <li class="nav-item ml-0 ml-lg-3">
+      <a href="#" class="nav-link d-flex align-items-center">
+        <img src="/{{ directory ~'/images/icons/icon_browser.svg' }}">
+        <span class="text-white ml-2">{{ "日本語"|t }}</span>
+      </a>
+    </li>
+
+    <li class="nav-item dropdown ml-0 ml-lg-3">
+      <a class="nav-link d-flex align-items-center" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
          aria-haspopup="true" aria-expanded="false">
         <img src="/{{ directory ~'/images/icons/icon_person.svg' }}" width="20" height="21">
         <span class="text-white ml-2">{{ "Sign Out"|t }}</span>
+        <img class="ml-2" src="/{{ directory ~'/images/icons/icon_lang.svg' }}">
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
         {% if items %}
@@ -28,14 +35,22 @@
   {% else %}
 
     <li class="nav-item">
-      <a href="#" class="nav-link">
+      <a href="#" class="nav-link d-flex align-items-center">
         <img src="/{{ directory ~'/images/icons/icon_faq.svg' }}">
         <span class="text-white ml-2">{{ "FAQ"|t }}</span>
       </a>
     </li>
 
-    <li class="nav-item dropdown">
-      <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+    <li class="nav-item ml-0 ml-lg-3">
+      <a href="#" class="nav-link d-flex align-items-center">
+        <img src="/{{ directory ~'/images/icons/icon_browser.svg' }}">
+        <span class="text-white ml-2">{{ "日本語"|t }}</span>
+        <img class="ml-2" src="/{{ directory ~'/images/icons/icon_lang.svg' }}">
+      </a>
+    </li>
+
+    <li class="nav-item dropdown ml-0 ml-lg-3">
+      <a class="nav-link d-flex align-items-center" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
          aria-haspopup="true" aria-expanded="false">
         <img src="/{{ directory ~'/images/icons/icon_person.svg' }}" width="20" height="21">
         <span class="text-white ml-2">{{ "Sign In"|t }}</span>

@@ -1,8 +1,8 @@
 {% block content %}
   {% if site_logo %}
-    <a class="navbar-brand text-white" href="{{ path('<front>') }}">
-      <img src="{{ site_logo == null ? '/' ~ directory ~'/images/icons/icon_logo.svg' : site_logo }}">
-      <span>{{ site_logo == null ? 'Gold-Guide' : '' }}</span>
+    <a class="navbar-brand text-white d-flex align-items-center" href="{{ path('<front>') }}">
+      <img width="38" height="38"  src="{{ '/' ~ directory ~'/images/icons/icon_logo.svg' }}">
+      <span class="ml-2">{{ 'Gold-Guide' }}</span>
     </a>
     <button class="navbar-toggler btn-nttcom-navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
