@@ -44,6 +44,15 @@
 a {
   text-decoration: none !important;
 }
+.pag-custom {
+  &.active {
+    a {
+      background: #1A4A82 !important;
+      color: #ffffff !important;
+      border-color: #1A4A82 !important;
+    }
+  }
+}
 .header {
   background-color: #1A4A82;
   position: sticky;
