@@ -13,9 +13,9 @@
           <div class="body-image">
             <a href="{{ path('entity.node.canonical', {'node': spot.id}) }}">
               {% if spot.field_image.entity.fileuri %}
-                <img class="w-100" src="{{ file_url(spot.field_image.entity.fileuri) }}"/>
+                <img class="w-100" src="{{ file_url(spot.field_image.entity.fileuri) }}" onerror="this.onerror=null;this.src='/{{ directory ~'/images/default-spot.png' }}';" />
               {% else %}
-                <img class="w-100" src="/themes/custom/nttcom/images/default-spot.png"/>
+                <img class="w-100" src="/{{ directory ~'/images/default-spot.png' }}"/>
               {% endif %}
             </a>
             <div class="form-check">

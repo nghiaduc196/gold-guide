@@ -7,9 +7,9 @@
           <div class="body-image">
             <a href="{{ path('entity.node.canonical', {'node': spot._entity.id}) }}">
               {% if spot._entity.field_image.entity.uri.value %}
-                <img class="w-100" src="{{ file_url(spot._entity.field_image.entity.uri.value) }}"/>
+                <img class="w-100" src="{{ file_url(spot._entity.field_image.entity.uri.value) }}" onerror="this.onerror=null;this.src='/{{ directory ~'/images/default-spot.png' }}';"/>
               {% else %}
-                <img class="w-100" src="/themes/custom/nttcom/images/default-spot.png"/>
+                <img class="w-100" src="/{{ directory ~'/images/default-spot.png' }}" />
               {% endif %}
             </a>
           </div>
