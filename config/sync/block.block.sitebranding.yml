@@ -1,0 +1,23 @@
+uuid: fdff394d-1f96-406d-9e1c-aac32a3bc699
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - nttcom
+id: sitebranding
+theme: nttcom
+region: footer
+weight: -5
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }
