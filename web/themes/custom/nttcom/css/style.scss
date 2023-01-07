@@ -44,6 +44,9 @@
 a {
   text-decoration: none !important;
 }
+li {
+  list-style: none;
+}
 .pag-custom {
   &.active {
     a {
@@ -375,6 +378,9 @@ a {
   }
 
 }
+main {
+  //min-height: 50vh;
+}
 .modal-tutorial {
   position: fixed;
   bottom: 0;
@@ -403,6 +409,37 @@ a {
       font-weight: 600;
       font-size: 20px;
       line-height: 30px;
+      color: #ffffff;
+    }
+  }
+}
+
+.site-footer {
+  padding: 22px 22px 20px 22px;
+  .menu-footer {
+    .logo {
+      margin-bottom: 14px;
+    }
+    .nav-item {
+      a {
+        font-family: 'Hiragino Kaku Gothic Pro';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 18px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+      }
+    }
+  }
+  .copy-right {
+    margin-top: 35px;
+    span {
+      font-family: 'Hiragino Kaku Gothic Pro';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 12px;
+      line-height: 16px;
       color: #ffffff;
     }
   }

@@ -25,3 +25,14 @@
     <span>{{ "ガイドを検索"|t }}</span>
   </button>
 </div>
+
+<footer class="site-footer bg-header">
+  <ul class="menu-footer p-0 m-0">
+    {% if page.footer %}
+      {{ page.footer }}
+    {% endif %}
+  </ul>
+  <div class="copy-right text-center">
+    <span>Copyright ©  All Rights Reserved.</span>
+  </div>
+</footer>
