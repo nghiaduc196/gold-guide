@@ -1,26 +1,12 @@
 <ul class="navbar-nav ml-auto">
+  <li class="nav-item">
+    <a href="#" class="nav-link d-flex align-items-center">
+      <img src="/{{ directory ~'/images/icons/icon_faq.svg' }}">
+      <span class="text-white ml-2">{{ "FAQ"|t }}</span>
+    </a>
+  </li>
+  {{ drupal_block('language_block:language_interface') }}
   {% if logged_in %}
-
-    <li class="nav-item">
-      <a href="#" class="nav-link d-flex align-items-center">
-        <img src="/{{ directory ~'/images/icons/icon_faq.svg' }}">
-        <span class="text-white ml-2">{{ "FAQ"|t }}</span>
-      </a>
-    </li>
-
-    <li class="nav-item ml-0 ml-lg-3 position-relative">
-      <a href="#" class="nav-link d-flex align-items-center" id="navbarDropdown1" role="button" data-toggle="dropdown"
-         aria-haspopup="true" aria-expanded="false">
-        <img src="/{{ directory ~'/images/icons/icon_browser.svg' }}">
-        <span class="text-white ml-2">{{ "日本語"|t }}</span>
-        <img class="ml-2" src="/{{ directory ~'/images/icons/icon_lang.svg' }}">
-      </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-        <a class="dropdown-item" href="#">English</a>
-        <a class="dropdown-item" href="#">Japanese</a>
-      </div>
-    </li>
-
     <li class="nav-item dropdown ml-0 ml-lg-3">
       <a class="nav-link d-flex align-items-center" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
          aria-haspopup="true" aria-expanded="false">
@@ -37,29 +23,7 @@
       </div>
 
     </li>
-
   {% else %}
-
-    <li class="nav-item">
-      <a href="#" class="nav-link d-flex align-items-center">
-        <img src="/{{ directory ~'/images/icons/icon_faq.svg' }}">
-        <span class="text-white ml-2">{{ "FAQ"|t }}</span>
-      </a>
-    </li>
-
-    <li class="nav-item ml-0 ml-lg-3 position-relative">
-      <a href="#" class="nav-link d-flex align-items-center" id="navbarDropdown1" role="button" data-toggle="dropdown"
-         aria-haspopup="true" aria-expanded="false">
-        <img src="/{{ directory ~'/images/icons/icon_browser.svg' }}">
-        <span class="text-white ml-2">{{ "日本語"|t }}</span>
-        <img class="ml-2" src="/{{ directory ~'/images/icons/icon_lang.svg' }}">
-      </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-        <a class="dropdown-item" href="#">English</a>
-        <a class="dropdown-item" href="#">Japanese</a>
-      </div>
-    </li>
-
     <li class="nav-item dropdown ml-0 ml-lg-3">
       <a class="nav-link d-flex align-items-center" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
          aria-haspopup="true" aria-expanded="false">
@@ -73,7 +37,6 @@
       </div>
 
     </li>
-
   {% endif %}
 
 </ul>

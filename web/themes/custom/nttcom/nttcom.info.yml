@@ -14,6 +14,7 @@ libraries:
 
 regions:
   header: 'Header'
+  header_menu: 'Header menu'
   navigation: 'Navigation'
   sidebar_left: 'Sidebar left'
   content: 'Content'
