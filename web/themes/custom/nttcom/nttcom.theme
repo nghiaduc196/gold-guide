@@ -64,8 +64,11 @@ function nttcom_preprocess_node(&$variables) {
  * Implements hook_preprocess_HOOK() for block.html.twig.
  */
 function nttcom_preprocess_block(&$variables) {
-  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
-  $variables['language'] = $language;
+  $language = \Drupal::languageManager()->getCurrentLanguage();
+  $langId = $language->getId();
+  $langName = $language->getName();
+  $variables['language'] = $langId;
+  $variables['language_name'] = $langName;
 }
 
 /**
