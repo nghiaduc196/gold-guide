@@ -14,11 +14,9 @@
 {% endblock %}
 
 <footer class="site-footer bg-header">
-  <ul class="menu-footer p-0 m-0">
-    {% if page.footer %}
-      {{ page.footer }}
-    {% endif %}
-  </ul>
+  {% if page.footer %}
+    {{ page.footer }}
+  {% endif %}
   <div class="copy-right text-center">
     <span>Copyright ©  All Rights Reserved.</span>
   </div>

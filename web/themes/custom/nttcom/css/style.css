@@ -16,6 +16,27 @@ li {
   background: #1A4A82;
 }
 
+.language-bottom-md {
+  width: 267px;
+}
+
+.language-bottom-sm {
+  margin-bottom: 25px !important;
+  margin-top: 10px !important;
+}
+
+.language-bottom li {
+  padding-left: 0;
+}
+.language-bottom li .nav-link {
+  padding-left: 0;
+  padding-right: 0;
+  border-bottom: 1px solid #FFFFFF;
+}
+.language-bottom li img.ml-2 {
+  margin-left: auto !important;
+}
+
 .z-index-9999 {
   z-index: 99;
 }

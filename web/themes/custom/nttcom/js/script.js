@@ -9,6 +9,11 @@
 
 
 $(document).ready(function(){
+  $("body").on('click', "a[data-toggle='dropdown1']", function (event) {
+    $(this).next().toggleClass('show');
+    event.preventDefault();
+  });
+
   $('.owl-carousel').owlCarousel({
     loop:true,
     margin: 10,

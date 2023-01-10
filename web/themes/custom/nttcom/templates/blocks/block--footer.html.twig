@@ -1,3 +1,13 @@
-{% block content %}
-  {{ content }}
-{% endblock %}
+<div class="d-md-flex justify-content-between">
+  <ul class="d-block d-md-none language-bottom language-bottom-sm p-0 m-0 navbar-nav">
+    {{ drupal_block('language_block:language_interface') }}
+  </ul>
+  <ul class="menu-footer p-0 m-0">
+    {% block content %}
+      {{ content }}
+    {% endblock %}
+  </ul>
+  <ul class="d-none d-md-block language-bottom language-bottom-md p-0 m-0">
+    {{ drupal_block('language_block:language_interface') }}
+  </ul>
+</div>
