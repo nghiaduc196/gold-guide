@@ -1,0 +1,53 @@
+<div class="guide-container">
+  <div class="guide">
+    <div class="information">
+      <div class="guide-name">{{ content.field_first_name}} {{ content.field_last_name }}</div>
+      <div class="guide-details">
+        <div class="avatar-container">
+          {% if content.user_picture.entity.fileuri %}
+            <img class="w-100" src="{{ file_url(spot.field_image.entity.fileuri) }}"
+                 onerror="this.onerror=null;this.src='/{{ directory ~'/images/no-avartasssssssssss.png' }}';"/>
+          {% else %}
+            <img class="w-100" src="/{{ directory ~'/images/no-avatar.png' }}"/>
+          {% endif %}
+          {#class="avatar"#}
+          <div class="awarded"></div>
+        </div>
+        <div class="details">
+          <div class="language">
+            <img class="ml-2" src="/{{ directory ~'/images/icons/icon_world_form.png' }}">
+            {{ content.field_language }}
+          </div>
+          <div class="destination">
+            <img class="ml-2" src="/{{ directory ~'/images/icons/icon_location.png' }}">
+            大阪、京都、神戸
+          </div>
+          <div class="comment-n-rate">
+            <div class="comment">
+              <img class="ml-2" src="/{{ directory ~'/images/icons/icon_comment.png' }}">
+              20
+            </div>
+            <div class="rate">
+{#              <img class="ml-2" src="/{{ directory ~'/images/icons/icon_star.png' }}">#}
+              {{ content.field_ranking }}
+            </div>
+          </div>
+        </div>
+      </div>
+      {% if content.field_tags is defined and content.field_tags is not null %}
+        <div class="tags">
+          <div class="tag">歴史</div>
+          <div class="tag">{{ content.field_tags }}</div>
+        </div>
+      {% endif %}
+      <div class="guide-intro">
+        {{ content.field_intro }}
+      </div>
+    </div>
+    <hr>
+    <div class="price">
+      <div class="field-price">金額</div>
+      <div class="price-details">{{ content.field_price }}円／時間</div>
+    </div>
+  </div>
+</div>

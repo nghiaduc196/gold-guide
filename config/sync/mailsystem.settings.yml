@@ -1,0 +1,7 @@
+_core:
+  default_config_hash: IhwTepsVwtbtbcT5GzQKhCXDCRvbk3MNkWqPiuiZ10s
+langcode: ja
+theme: current
+defaults:
+  sender: maillog
+  formatter: maillog

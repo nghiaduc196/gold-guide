@@ -1,0 +1,10 @@
+<fieldset class="user-input">
+  <legend> {{ label }}</legend>
+  {{ children }}
+  <i onclick="actionpwd()" class="fa fa-eye" aria-hidden="true" style="color: #1A4A82; cursor: pointer;"></i>
+  {% if errors %}
+    <div class="form-item--error-message error">
+      {{ errors }}
+    </div>
+  {% endif %}
+</fieldset>

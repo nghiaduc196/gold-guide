@@ -1,0 +1,19 @@
+uuid: c588bbd1-de77-424f-b74d-1a6b5419f950
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_other_qualification
+    - paragraphs.paragraphs_type.addination_info
+id: paragraph.addination_info.field_other_qualification
+field_name: field_other_qualification
+entity_type: paragraph
+bundle: addination_info
+label: その他資格
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

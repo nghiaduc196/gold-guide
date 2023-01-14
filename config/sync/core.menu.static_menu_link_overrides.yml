@@ -5,7 +5,7 @@ definitions:
   contact__site_page:
     menu_name: footer
     parent: ''
-    weight: 0
+    weight: -49
     expanded: false
     enabled: true
   standard__front_page:
@@ -14,3 +14,27 @@ definitions:
     weight: 0
     expanded: false
     enabled: false
+  nttcom_user__cancel_account:
+    weight: -47
+    menu_name: user-menu
+    parent: ''
+    enabled: true
+    expanded: false
+  nttcom_user__change_password:
+    weight: -48
+    menu_name: user-menu
+    parent: ''
+    expanded: false
+    enabled: true
+  nttcom_calendar__user_my_calendar:
+    weight: -49
+    menu_name: user-menu
+    parent: ''
+    expanded: false
+    enabled: true
+  nttcom_user__user_page:
+    weight: -50
+    menu_name: user-menu
+    parent: ''
+    expanded: false
+    enabled: true

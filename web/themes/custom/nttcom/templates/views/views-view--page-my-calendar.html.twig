@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-md-4">
+    {{ drupal_block('nttcom_calendar_calendar') }}
+    {{ drupal_block('nttcom_calendar_guide_calendar_block') }}
+    <div id="guide_zabutocalendar"></div>
+  </div>
+  <div class="col-md-8">
+    {{ title_prefix }}
+    {% if title %}
+      {{ title }}
+    {% endif %}
+    {{ title_suffix }}
+    {% if rows %}
+      <div class="view-content">
+        {{ rows }}
+      </div>
+    {% elseif empty %}
+      <div class="view-empty">
+        {{ empty }}
+      </div>
+    {% endif %}
+    {% if pager %}
+      {{ pager }}
+    {% endif %}
+  </div>
+</div>
+

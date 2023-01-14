@@ -1,0 +1,13 @@
+uuid: 9314dc46-914c-4281-8098-da245dc2d29f
+langcode: ja
+status: true
+dependencies:
+  module:
+    - nttcom_user
+_core:
+  default_config_hash: mFMk5tuSzGAkku9YoPWMqwtImRb0KZpzCqZra0eQEBw
+id: user_reject_action
+label: 'Reject user'
+type: user
+plugin: user_reject_action
+configuration: {  }

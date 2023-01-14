@@ -1,0 +1,33 @@
+uuid: d08527fb-5365-4f90-bdf7-a8c1f431d324
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_working_day
+field_name: field_working_day
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '100'
+      label: 100日未満
+    -
+      value: 100-150
+      label: 100日以上~150日未満
+    -
+      value: 150-200
+      label: 150日以上~200日未満
+    -
+      value: '200'
+      label: 200日以上
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

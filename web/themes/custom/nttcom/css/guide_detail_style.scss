@@ -1,0 +1,623 @@
+.page-guide-detail {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  @media only screen and (max-width: 768px) {
+    padding-top: 0;
+  }
+  .view-empty {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+  button {
+    outline: none !important;
+  }
+
+  .text-center {
+    &.mt-5 {
+      display: none;
+    }
+  }
+
+  .information {
+    padding-left: 40px;
+    padding-right: 40px;
+    @media only screen and (max-width: 768px) {
+      padding-left: 0;
+      padding-right: 0;
+      .row {
+        margin-left: 0;
+        margin-right: 0;
+
+        .col-12 {
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+    }
+
+    .owl-carousel-custom {
+      position: relative;
+
+      .owl-item {
+        img {
+          border-radius: 23px;
+          @media only screen and (max-width: 768px) {
+            border-radius: 0;
+            height: 250px;
+            object-fit: cover;
+          }
+        }
+      }
+
+      .owl-dots {
+        position: absolute;
+        bottom: 16px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        @media only screen and (max-width: 768px) {
+          bottom: 27px;
+        }
+
+        .owl-dot {
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.5);
+          margin-right: 8px;
+          outline: none !important;
+
+          &:hover {
+            opacity: 0.8;
+          }
+
+          &.active {
+            background: #FFC524;
+          }
+        }
+      }
+    }
+
+    .information-right {
+      background: #ffffff;
+      @media only screen and (max-width: 768px) {
+        position: relative;
+        top: -20px;
+        border-radius: 12px 12px 0 0;
+        z-index: 1;
+      }
+
+      .location-language {
+        span {
+          margin-top: 2px;
+        }
+
+        margin-bottom: 26px;
+        @media only screen and (max-width: 768px) {
+          margin-bottom: 0;
+          div {
+            margin-bottom: 12px;
+          }
+        }
+      }
+
+      .comment-rating {
+        span {
+          margin-top: 2px;
+        }
+
+        @media only screen and (max-width: 768px) {
+          .row {
+            padding: 0;
+          }
+          margin-bottom: 0;
+          div {
+            margin-bottom: 12px;
+          }
+          .comment-rating-right {
+            margin-top: 6px;
+
+            .pl-custom {
+              padding-left: 0;
+            }
+          }
+        }
+      }
+
+      .name {
+        font-family: 'Hiragino Kaku Gothic Pro';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 36px;
+        line-height: 54px;
+        margin-bottom: 44px;
+        @media only screen and (max-width: 768px) {
+          margin-top: 35px;
+          margin-bottom: 28px;
+          font-size: 18px;
+          line-height: 27px;
+          text-align: center;
+        }
+      }
+
+      .row {
+        @media only screen and (max-width: 768px) {
+          padding-left: 18px;
+          padding-right: 18px;
+        }
+      }
+
+      .mt-26 {
+        margin-top: 26px;
+        @media only screen and (max-width: 768px) {
+          padding-left: 18px;
+          padding-right: 18px;
+        }
+      }
+
+      .text-custom {
+        font-family: 'Hiragino Kaku Gothic Pro';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 18px;
+      }
+
+      .tags {
+        margin-top: 26px;
+        @media only screen and (max-width: 768px) {
+          margin-top: 0;
+          .pl-custom {
+            padding-left: 0;
+          }
+        }
+
+        .tag {
+          background: #E3F6FC;
+          border-radius: 100px;
+          padding: 10px 18px;
+          font-family: 'Hiragino Kaku Gothic Pro';
+          font-style: normal;
+          font-weight: 300;
+          font-size: 12px;
+          line-height: 18px;
+          color: #1A4A82;
+        }
+      }
+
+      .price {
+        padding-top: 20px;
+        padding-bottom: 24px;
+        border-top: 1px solid #E3F6FC;
+        border-bottom: 1px solid #E3F6FC;
+        margin-top: 45px;
+
+        span {
+          font-family: 'Hiragino Kaku Gothic Pro';
+          font-style: normal;
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 24px;
+          color: #1A4A82;
+          @media only screen and (max-width: 768px) {
+            font-size: 14px;
+            line-height: 21px;
+          }
+
+          strong {
+            margin-left: 7px;
+            font-family: 'Hiragino Kaku Gothic Pro';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 27px;
+            color: #000000;
+            @media only screen and (max-width: 768px) {
+              font-size: 14px;
+              line-height: 21px;
+            }
+          }
+        }
+      }
+
+      .desc {
+        margin-top: 40px;
+        margin-bottom: 40px;
+        font-family: 'Hiragino Kaku Gothic Pro';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 24px;
+        @media only screen and (max-width: 768px) {
+          padding-left: 18px;
+          padding-right: 18px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          font-size: 12px;
+          line-height: 18px;
+        }
+      }
+
+      .button-book {
+        max-width: 366px;
+        margin: 0 auto;
+
+        .book {
+          outline: none !important;
+          font-family: 'Hiragino Kaku Gothic Pro';
+          font-style: normal;
+          font-weight: 600;
+          font-size: 20px;
+          line-height: 30px;
+          color: #1A4A82;
+          border: 1px solid #1A4A82 !important;
+          background: #ffffff;
+          width: 366px;
+          height: 60px;
+          border-radius: 999999px;
+          box-shadow: 0 0 28px rgba(59, 59, 59, 0.24);
+          cursor: pointer;
+          @media only screen and (max-width: 768px) {
+            font-size: 18px;
+            line-height: 27px;
+          }
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+
+    }
+  }
+
+  .content-guide {
+    margin-top: 75px;
+    padding-left: 40px;
+    @media only screen and (max-width: 768px) {
+      margin-top: 32px;
+      padding-left: 12px;
+    }
+
+    &.content-spot {
+      margin-top: 147px;
+      @media only screen and (max-width: 768px) {
+        margin-top: 67px;
+      }
+    }
+
+    h2 {
+      font-family: 'Hiragino Kaku Gothic Pro';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 54px;
+      margin-right: 40px;
+      margin-bottom: 20px;
+      @media only screen and (max-width: 768px) {
+        font-size: 18px;
+        line-height: 27px;
+        margin-bottom: 12px;
+      }
+    }
+
+    p {
+      font-family: 'Hiragino Kaku Gothic Pro';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 24px;
+      @media only screen and (max-width: 768px) {
+        font-size: 12px;
+        line-height: 18px;
+        padding-right: 14px;
+        margin-bottom: 12px;
+      }
+    }
+
+    .body-text {
+      span {
+        font-family: 'Hiragino Kaku Gothic Pro';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 27px;
+        @media only screen and (max-width: 768px) {
+          font-size: 14px;
+          line-height: 21px;
+        }
+      }
+    }
+
+    .list-content-guide {
+      .owl-carousel {
+        position: relative;
+      }
+
+      img {
+        border-radius: 8px;
+      }
+
+      .owl-nav {
+        margin-top: 20px;
+        position: absolute;
+        right: 45px;
+        @media only screen and (max-width: 768px) {
+          right: 6px;
+        }
+
+        span {
+          display: none;
+        }
+
+        .owl-prev, .owl-next {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+
+          &:hover {
+            opacity: 0.8;
+          }
+
+          @media only screen and (max-width: 768px) {
+            width: 40px;
+            height: 40px;
+          }
+        }
+
+        .owl-prev {
+          background: url("../images/icons/icon_arr_left.svg") #E3F6FC no-repeat center center;
+          margin-right: 30px;
+          @media only screen and (max-width: 768px) {
+            margin-right: 15px;
+            background: url("../images/icons/icon_arr_left_mb.svg") #E3F6FC no-repeat center center;
+          }
+        }
+
+        .owl-next {
+          background: url("../images/icons/icon_arr_right.svg") #E3F6FC no-repeat center center;
+          @media only screen and (max-width: 768px) {
+            background: url("../images/icons/icon_arr_right_mb.svg") #E3F6FC no-repeat center center;
+          }
+        }
+      }
+    }
+  }
+
+  .video-introduce {
+    margin-top: 147px;
+    @media only screen and (max-width: 768px) {
+      margin-top: 50px;
+    }
+
+    h2 {
+      font-family: 'Hiragino Kaku Gothic Pro';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 54px;
+      margin-bottom: 20px;
+      padding-left: 40px;
+      padding-right: 40px;
+      @media only screen and (max-width: 768px) {
+        font-size: 18px;
+        line-height: 27px;
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+    }
+  }
+
+  .review {
+    padding-left: 35px;
+    margin-top: 70px;
+    @media only screen and (max-width: 768px) {
+      margin-top: 52px;
+      padding-left: 7px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-family: 'Hiragino Kaku Gothic Pro';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 54px;
+      @media only screen and (max-width: 768px) {
+        font-size: 18px;
+        line-height: 27px;
+      }
+    }
+
+    .list-review {
+      .owl-carousel {
+        .owl-stage-outer {
+          padding: 10px 0 10px 5px;
+
+          .owl-stage {
+            cursor: pointer;
+          }
+        }
+
+        .owl-nav {
+          margin-top: 20px;
+          position: absolute;
+          right: 45px;
+          @media only screen and (max-width: 768px) {
+            right: 6px;
+          }
+
+          span {
+            display: none;
+          }
+
+          .owl-prev, .owl-next {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+
+            &:hover {
+              opacity: 0.8;
+            }
+
+            @media only screen and (max-width: 768px) {
+              width: 40px;
+              height: 40px;
+            }
+          }
+
+          .owl-prev {
+            background: url("../images/icons/icon_arr_left.svg") #E3F6FC no-repeat center center;
+            margin-right: 30px;
+            @media only screen and (max-width: 768px) {
+              margin-right: 15px;
+              background: url("../images/icons/icon_arr_left_mb.svg") #E3F6FC no-repeat center center;
+            }
+          }
+
+          .owl-next {
+            background: url("../images/icons/icon_arr_right.svg") #E3F6FC no-repeat center center;
+            @media only screen and (max-width: 768px) {
+              background: url("../images/icons/icon_arr_right_mb.svg") #E3F6FC no-repeat center center;
+            }
+          }
+        }
+
+        .item {
+          padding: 20px;
+          background: #FFFFFF;
+          box-shadow: 0 2px 8px rgba(59, 59, 59, 0.24);
+          border-radius: 8px;
+
+          .body {
+            .date {
+              font-family: 'Hiragino Kaku Gothic Pro';
+              font-style: normal;
+              font-weight: 300;
+              font-size: 12px;
+              line-height: 18px;
+            }
+
+            h6 {
+              margin-top: 6px;
+              margin-bottom: 6px;
+              font-family: 'Hiragino Kaku Gothic Pro';
+              font-style: normal;
+              font-weight: 600;
+              font-size: 18px;
+              line-height: 27px;
+            }
+
+            .rating {
+              span {
+                margin-right: 5px;
+              }
+            }
+
+            p {
+              margin-top: 11px;
+              font-family: 'Hiragino Kaku Gothic Pro';
+              font-style: normal;
+              font-weight: 300;
+              font-size: 14px;
+              line-height: 21px;
+            }
+          }
+
+        }
+      }
+    }
+  }
+
+  .calendar {
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 147px;
+    @media only screen and (max-width: 768px) {
+      margin-top: 67px;
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+
+    h2 {
+      font-family: 'Hiragino Kaku Gothic Pro';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 54px;
+      @media only screen and (max-width: 768px) {
+        font-size: 18px;
+        line-height: 27px;
+      }
+    }
+  }
+}
+.content {
+  #js-drupal-zabutocalendar {
+    //max-width: 600px;
+    //margin: 0 auto;
+    //box-shadow: 0 2px 8px rgba(59, 59, 59, 0.24);
+    //border-radius: 8px;
+    //padding-bottom: 15px;
+
+    @media only screen and (max-width: 768px) {
+      margin-left: 12px;
+      margin-right: 12px;
+    }
+
+
+    .zabuto-calendar {
+
+      max-width: 600px;
+      margin: 0 auto;
+      box-shadow: 0 2px 8px rgba(59, 59, 59, 0.24);
+      border-radius: 8px;
+      padding-bottom: 15px;
+
+      .zabuto-calendar__navigation {
+        span {
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 400;
+          color: #27272A;
+          margin-top: 3px;
+          margin-bottom: 12px;
+          display: block;
+        }
+      }
+      .zabuto-calendar__days-of-week {
+        height: 40px;
+        .zabuto-calendar__days-of-week__item {
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          color: #808089;
+        }
+      }
+
+      td {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        vertical-align: top;
+        img {
+          margin-top: 16px;
+        }
+      }
+
+      .zabuto-calendar__day {
+        color: #d7d7d7;
+        &.zabuto-calendar__event {
+          color: #27272A;
+        }
+      }
+      .zabuto-calendar__week--last {
+        .zabuto-calendar__day {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}

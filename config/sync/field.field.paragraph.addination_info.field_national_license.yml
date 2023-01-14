@@ -1,0 +1,23 @@
+uuid: 95b597ee-3529-4f33-b551-49849a8c5af9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_national_license
+    - paragraphs.paragraphs_type.addination_info
+id: paragraph.addination_info.field_national_license
+field_name: field_national_license
+entity_type: paragraph
+bundle: addination_info
+label: 全国通訳案内士資格
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

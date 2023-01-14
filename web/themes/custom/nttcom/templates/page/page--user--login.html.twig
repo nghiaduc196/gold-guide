@@ -1,39 +1,35 @@
 <div class="user-login-page {{ role_login }}">
 
-  {% if page.header %}
-    <nav class="navbar navbar-expand-lg navbar-light bg-header py-1 py-md-2 position-sticky top-0 z-index-9999">
-      {{ page.header }}
-    </nav>
-  {% endif %}
+  <div class="sign-in-content">
+    <div class="title">
+      <div class="sign-in-vector">
+      </div>
+      <div class="sign-in-vector">
+      </div>
+      <div><h3>{{ "Sign in"|t }}</h3></div>
+      <div><p>{{ "サインインを行います。"|t }}</p></div>
+    </div>
 
 
-    <div class="login-box col-12 justify-content-center">
-      <div class="col-6 mx-auto">
-        <div class="login-body">
-            <div class="d-flex justify-content-center my-4 login-title">
-                {% if role_login == 'customer-login' %}
-                    {{ "Login For Guest" }}
-                {% elseif role_login == 'guide-login' %}
-                    {{ "Login For Guide" }}
-                {% else %}
-                    {{ "Login For Office" }}
-                {% endif %}
-            </div>
-          {{ page.content }}
-          <div class="d-flex flex-column">
-            <a href="{{ path('user.pass') }}" class="forget-pass d-flex justify-content-center">Forgot password?</a>
-            <a href="/user/form-register-by-guide" class="forget-pass d-flex justify-content-center">Register by Guide</a>
-            <a href="{{ path('nttcom_user.verification_mail_exist_form') }}" class="forget-pass d-flex justify-content-center">Register by Guest</a>
-          </div>
+    <div class="sign-in-form">
+      <div class="form-content">
+        <div class="form-title">
+          {{ "アカウント情報を入力してサインインしてください"|t }}
+        </div>
+        {{ page.content }}
+        <div class="other-action">
+          <p>{{ "パスワードを忘れた方は"|t }}<a href="{{ path('user.pass') }}" class="forget-pass">{{ "こちら"|t }}</a></p>
+          {% if role_login == 'customer-login' %}
+            <p>{{ "会員登録がまだの方は"|t }}
+              <a href="{{ path('nttcom_user.verification_mail_exist_form') }}" class="forget-pass">{{ "こちら"|t }}</a>
+            </p>
+          {% elseif role_login == 'guide-login' %}
+            <p>{{ "会員登録がまだの方は"|t }}
+              <a href="/user/form-register-by-guide" class="forget-pass">{{ "こちら"|t }}</a>
+            </p>
+          {% endif %}
         </div>
       </div>
     </div>
-  <footer class="site-footer bg-header">
-    {% if page.footer %}
-      {{ page.footer }}
-    {% endif %}
-    <div class="copy-right text-center">
-      <span>Copyright ©  All Rights Reserved.</span>
-    </div>
-  </footer>
+  </div>
 </div>

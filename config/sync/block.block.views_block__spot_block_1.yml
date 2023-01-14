@@ -1,18 +1,17 @@
-uuid: 44314a96-d20b-4acd-a8c1-74596b790531
+uuid: c3cdd5a0-9ed1-4717-97dc-466d86cf4423
 langcode: en
 status: true
 dependencies:
   config:
     - views.view.spot
   module:
-    - language
     - views
   theme:
     - nttcom
 id: views_block__spot_block_1
 theme: nttcom
 region: spot_bottom
-weight: -4
+weight: 0
 provider: null
 plugin: 'views_block:spot-block_1'
 settings:
@@ -22,12 +21,4 @@ settings:
   provider: views
   views_label: ''
   items_per_page: none
-visibility:
-  language:
-    id: language
-    negate: false
-    context_mapping:
-      language: '@language.current_language_context:language_interface'
-    langcodes:
-      en: en
-      ja: ja
+visibility: {  }

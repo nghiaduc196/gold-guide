@@ -1,0 +1,28 @@
+{% if page.header %}
+  <nav class="navbar navbar-expand-lg navbar-light bg-header py-1 py-md-2 position-sticky top-0 z-index-9999">
+    {{ page.header }}
+  </nav>
+{% endif %}
+
+
+<div class="page-guide">
+  <div class="banner position-relative d-flex align-items-center justify-content-center">
+    <span class="text-uppercase font-weight-bolder text-white text">{{ "Tokyo tower"|t }}</span>
+    <div class="wrapper position-absolute top-0 left-0 right-0 bottom-0 m-auto"></div>
+  </div>
+  <div class="content">
+    {{ page.content }}
+  </div>
+
+</div>
+
+<footer class="site-footer bg-header">
+  <ul class="menu-footer p-0 m-0">
+    {% if page.footer %}
+      {{ page.footer }}
+    {% endif %}
+  </ul>
+  <div class="copy-right text-center">
+    <span>Copyright ©  All Rights Reserved.</span>
+  </div>
+</footer>

@@ -1,1 +1,26 @@
-{{ form }}
+<input type="hidden" autofocus="true" />
+<div class="row">
+  <div class="col-md-6">
+    {{ form.start_date }}
+  </div>
+  <div class="col-md-6">
+    {{ form.end_date }}
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    {{ form.start_time }}
+  </div>
+  <div class="col-md-6">
+    {{ form.end_time }}
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    {{ form.status }}
+  </div>
+</div>
+{{ form.actions }}
+{{ form.form_build_id }}
+{{ form.form_id }}
+{{ form.form_token }}

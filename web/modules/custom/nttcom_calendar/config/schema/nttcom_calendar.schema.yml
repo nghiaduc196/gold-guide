@@ -1,0 +1,7 @@
+views.style.nttcom_calendar_zabutocalendardisplay:
+  type: views_style
+  label: 'ZabutoCalendarDisplay'
+  mapping:
+    wrapper_class:
+      type: string
+      label: Wrapper class

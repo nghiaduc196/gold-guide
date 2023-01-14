@@ -1,0 +1,13 @@
+uuid: 534102b5-8999-46de-93a3-fe4b1dfb106b
+langcode: ja
+status: true
+dependencies:
+  module:
+    - nttcom_user
+_core:
+  default_config_hash: DVdgqkmx_V4YurA36aRBeRH5T85-VI1Ec5JxlTSoh88
+id: user_approval_action
+label: 'Approval user'
+type: user
+plugin: user_approval_action
+configuration: {  }

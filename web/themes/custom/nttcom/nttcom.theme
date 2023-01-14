@@ -50,7 +50,6 @@ function nttcom_preprocess_page(&$variables) {
       $variables['role_login'] = 'office-login';
     }
   }
-
 }
 
 /**
@@ -68,6 +67,9 @@ function nttcom_preprocess_block(&$variables) {
   $langId = $language->getId();
   $langName = $language->getName();
   $variables['language'] = $langId;
+  if ($langName == '英語') {
+    $langName = 'English';
+  }
   $variables['language_name'] = $langName;
 }
 
@@ -118,7 +120,14 @@ function nttcom_preprocess_links(&$variables) {
  */
 function nttcom_theme_suggestions_page_alter(array &$suggestions, array $variables, $hook) {
   $router = Drupal::routeMatch()->getRouteName();
-  if ($router == 'entity.user.canonical') {
+  $arr_routes = [
+    'entity.user.canonical',
+    'nttcom_change_pwd_page.change_password',
+    'nttcom_change_pwd_page.change_password_form',
+    'nttcom_calendar.my-calendar',
+    'nttcom_user.cancel_account'
+  ];
+  if (in_array($router, $arr_routes)) {
     $suggestions[] = $hook . '__my_account';
   }
 }
@@ -131,3 +140,40 @@ function nttcom_preprocess_menu__account(&$variables) {
 
   }
 }
+
+/**
+ * Implements hook_theme_suggestions_page_alter().
+ */
+function nttcom_theme_suggestions_user_alter(array &$suggestions, array $variables, $hook) {
+  $suggestions[] = $hook . '__' . $variables['elements']['#view_mode'];
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function nttcom_theme_suggestions_form_element_alter(array &$suggestions, array $variables, $hook) {
+  $route = Drupal::routeMatch()->getRouteName();
+  if ($route == 'user.login' || $route == 'user.register') {
+    $suggestions[] = $hook . '__user_' . $variables['element']['#name'];
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function nttcom_theme_suggestions_input_alter(array &$suggestions, array $variables, $hook) {
+  $route = Drupal::routeMatch()->getRouteName();
+  if ($route == 'user.login') {
+    $suggestions[] = $hook . '__user_' . $variables['element']['#name'];
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_alter().
+ */
+function nttcom_theme_suggestions_alter(array &$suggestions, array $variables, $hook) {
+  if ($hook == 'form' & !empty($variables['element']['#id'])) {
+    // $suggestions[] = 'form__' . str_replace('-', '_', $variables['element']['#id']);
+  }
+}
+

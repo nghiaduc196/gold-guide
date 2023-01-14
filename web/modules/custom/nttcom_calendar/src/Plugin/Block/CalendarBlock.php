@@ -46,18 +46,11 @@ class CalendarBlock extends BlockBase implements ContainerFactoryPluginInterface
   public function build() {
     $build = [
       '#theme' => 'nttcom_block_calendar',
-      '#attached' => [
-        'library' => [
-          'core/drupal',
-          'core/drupal.form',
-          'core/drupal.ajax'
-        ]
-      ]
     ];
-    $build['#attached']['library'][] ='core/jquery';
-    $build['#attached']['library'][] ='core/drupal.ajax';
-    $build['#attached']['library'][] ='core/drupal.dialog.ajax';
-    $build['#attached']['library'][] ='core/jquery.form';
+//    $build['#attached']['library'][] ='core/jquery';
+//    $build['#attached']['library'][] ='core/drupal.ajax';
+//    $build['#attached']['library'][] ='core/drupal.dialog.ajax';
+//    $build['#attached']['library'][] ='core/jquery.form';
     return $build;
   }
 }

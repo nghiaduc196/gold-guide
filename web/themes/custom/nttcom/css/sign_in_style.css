@@ -1,0 +1,204 @@
+.customer-login{
+    background-color: #E3F6FC !important;
+    height: 100vh;
+}
+
+.title{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 220px;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.title .sign-in-vector{
+  background-image: url(../images/icons/sign_in_1.png);
+  width: 160px;
+  height: 90px;
+  position: absolute;
+  z-index: -1;
+}
+
+.title .sign-in-vector:nth-child(1){
+    top: 5%;
+    left: 0;
+}
+
+.title .sign-in-vector:nth-child(2){
+    bottom: 5%;
+    right: 0;
+}
+
+.title h3{
+    text-transform: uppercase;
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 58px;
+    text-align: center;
+
+    color: #1A4A82;
+    z-index: 1;
+}
+
+.title p{
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+
+    text-align: center;
+
+    color: #172432;
+}
+
+.sign-in-content{
+    width: 720px;
+    margin: auto;
+}
+
+.sign-in-content .sign-in-form{
+    display: flex;
+    justify-content: center;
+}
+
+.sign-in-content .sign-in-form .form-content{
+    width: 720px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding: 60px;
+}
+
+.sign-in-content .sign-in-form .form-content .form-title{
+    display: flex;
+    justify-content: center;
+}
+
+.sign-in-content .sign-in-form .form-content .user-input {
+    width: 100%;
+    height: 80px;
+    display: inline-block;
+    border: 1px solid #9dd5f2;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.sign-in-content .sign-in-form .form-content input, a{
+    font-family: 'Hiragino Kaku Gothic Pro';
+}
+
+.user-input input {
+    border: none;
+    padding: 0px 20px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0;
+    /* identical to box height, or 150% */
+    /* Black */
+    color: #191919;
+    outline: none;
+    width: 95%;
+    display: inline-block;
+}
+
+.user-input legend {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 0;
+    color: #9dd5f2;
+
+    margin-inline-start: 10px;
+    width: fit-content;
+    padding-inline-start: 10px;
+    padding-inline-end: 10px;
+}
+
+.sign-in-content .sign-in-form .form-content .other-action{
+  display: inline-block !important;
+  flex-direction: column;
+  float: right;
+  text-align: right;
+}
+.other-action p {
+  margin-bottom: 0;
+}
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.sign-in-content .sign-in-form .form-content .btn-sign-in{
+    display: flex;
+    justify-content: center;
+}
+
+.sign-in-content .sign-in-form .form-content .btn-sign-in input{
+    width: 330px;
+    height: 60px;
+    background: #FFC524;
+    box-shadow: 0px 0px 28px rgba(59, 59, 59, 0.24);
+    border-radius: 999999px;
+    border: none;
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: 600;
+}
+
+@media only screen and (max-width: 768px){
+    .title{
+        height: 150px;
+    }
+
+    .title .sign-in-vector{
+        height: 46px;
+        width: 81px;
+    }
+
+    .sign-in-form{
+        height: 550px;
+    }
+
+    .sign-in-content .sign-in-form .form-content .btn-sign-in{
+        position: absolute;
+        bottom: 10px;
+    }
+
+    .sign-in-content .sign-in-form .form-content .btn-sign-in input{
+        width: 100%;
+    }
+
+    .sign-in-content .sign-in-form .form-content .form-title{
+        font-size: 12px;
+    }
+
+    .sign-in-content{
+        width: 100%;
+    }
+
+    .sign-in-content .sign-in-form .form-content{
+        width: 95%;
+        padding: 30px;
+    }
+
+    .sign-in-content .sign-in-form .form-content .user-input input{
+        width: 90%;
+    }
+
+    .sign-in-content .sign-in-form .form-content .user-input legend, .sign-in-content .sign-in-form .form-content .other-action{
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 444px){
+    .sign-in-content .sign-in-form .form-content .user-input input{
+        width: 85%;
+    }
+}

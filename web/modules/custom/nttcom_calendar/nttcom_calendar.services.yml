@@ -1,0 +1,4 @@
+services:
+  nttcom_calendar:
+    class: Drupal\nttcom_calendar\CalendarService
+    arguments: ['@entity_type.manager', '@current_user', '@logger.factory']

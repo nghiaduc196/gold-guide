@@ -1,0 +1,21 @@
+uuid: 56923f86-cb9a-4648-a88a-176ae9d76146
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_working_day
+    - paragraphs.paragraphs_type.addination_info
+  module:
+    - options
+id: paragraph.addination_info.field_working_day
+field_name: field_working_day
+entity_type: paragraph
+bundle: addination_info
+label: 稼働日数（資格取得後通算）
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

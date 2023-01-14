@@ -1,0 +1,25 @@
+uuid: 0fec2e87-7397-43d6-959b-23b885ff7760
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.user-menu
+  module:
+    - system
+  theme:
+    - nttcom
+id: usermenu
+theme: nttcom
+region: sidebar
+weight: 0
+provider: null
+plugin: 'system_menu_block:user-menu'
+settings:
+  id: 'system_menu_block:user-menu'
+  label: 'User menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

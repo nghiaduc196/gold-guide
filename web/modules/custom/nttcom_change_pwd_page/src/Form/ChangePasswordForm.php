@@ -161,8 +161,10 @@ class ChangePasswordForm extends FormBase {
     $user = User::load(\Drupal::routeMatch()->getRawParameter('user'));
     $user->setPassword($form_state->getValue('pass'));
     $user->save();
-    $form_state->setRedirect('<front>');
-    user_logout();
+    if (!in_array(ROLE_SUPER_ADMIN, \Drupal::currentUser()->getRoles())) {
+      $form_state->setRedirect('<front>');
+      user_logout();
+    }
     $this->messenger()->addStatus($this->t('Your password has been changed.'));
   }
 

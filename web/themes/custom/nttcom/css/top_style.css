@@ -1,0 +1,389 @@
+/* reset css */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.row{
+    width: 100%;
+}
+
+/* slide-section */
+.body-container .slide{
+    height: 790px;
+    background-image: url(../images/icons/Background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 80px;
+    background-position: center bottom;
+}
+
+.hero-title .hero-title-detail{
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 110px;
+    line-height: 132px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 4px;
+    color: #FFFFFF;
+
+    position: relative;
+    top: 237px;
+    left: 95px;
+}
+
+.slide form{
+    position: relative;
+    width: 440px;
+    height: 710px;
+    background: #FFFFFF;
+    /* Panel */
+    margin-top: 40px;
+    box-shadow: 0px 2px 8px rgba(59, 59, 59, 0.24);
+    border-radius: 8px;
+}
+
+.slide .form legend{
+    width: fit-content;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #9DD5F2;
+
+    margin-left: 10px;
+    padding: 0px 5px;
+}
+
+.form legend p{
+    display: inline;
+    color: #717171;
+    opacity: 0.4;
+}
+
+.form fieldset{
+    border: 1px solid #000000;
+    border-radius: 10px;
+    border: 1px solid #9DD5F2;
+    border-radius: 8px;
+}
+
+.form .form-title, .form fieldset{
+    margin: 0px 12.5% 29px;
+}
+
+.form .form-title{
+    padding-top: 36px;
+    font-family: 'Hiragino Kaku Gothic Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+    color: #252525;
+}
+
+.form .form-title p{
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 140%;
+    color: #717171;
+}
+
+.form fieldset img{
+    margin-left: 15px;
+}
+
+.form input[type=text],
+.form input[type=date]{
+    position: relative;
+    top: 3px;
+    border: none;
+    outline: none;
+    left: 3px;
+}
+
+.form input[type=submit]{
+    width: 80%;
+    height: 60px;
+    border: none;
+    outline: none;
+
+    position: absolute;
+    left: 11.5%;
+    bottom: 5%;
+
+    background: #FFC524;
+    box-shadow: 0px 0px 28px rgba(59, 59, 59, 0.24);
+    border-radius: 999999px;
+
+    font-family: 'Hiragino Kaku Gothic Pro';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+
+    color: #FFFFFF;
+}
+/* about-section */
+.about-section-content img{
+    position: relative;
+    left: 5%;
+    top: 5px;
+}
+
+.body-container .about-section .small-title,
+.body-container .about-section .title{
+    text-transform: uppercase;
+    font-family: 'Bebas Neue';
+    text-align: center;
+}
+
+.body-container .about-section .small-title{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    color: #1A4A82;
+}
+
+.body-container .about-section .title{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 58px;
+    text-align: center;
+    color: #112B3C;
+    margin-bottom: 50px;
+}
+
+.about-section .main-content,
+.about-section .values .value-detail{
+    font-family: 'Hiragino Kaku Gothic Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: justify;
+    color: #3D3E48;
+}
+
+.about-section .main-content{
+    margin-bottom: 58px;
+}
+
+.about-section .values .value-title{
+    text-transform: uppercase;
+    text-align: justify;
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    color: #1A4A82;
+}
+
+.about-section .value{
+    margin-bottom: 40px;
+}
+/* content-section */
+.content-section .title{
+    text-transform: uppercase;
+    color: #1A4A82;
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 58px;
+    text-align: center;
+}
+
+.content-section .description{
+    text-align: center;
+    color: #172432;
+    font-family: 'Hiragino Kaku Gothic Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 40px;
+}
+
+.content-section button{
+    width: 366px;
+    height: 60px;
+    border-radius: 999999px;
+    border: none;
+    background: #FFC524;
+    box-shadow: 0px 0px 28px rgba(59, 59, 59, 0.24);
+
+    color: #FFFFFF;
+    font-family: 'Hiragino Kaku Gothic Pro';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 20px;
+}
+
+.news .news-detail{
+    width: 85%;
+    margin: auto;
+}
+
+.news-detail .a-news{
+    margin: 20px 0px;
+}
+
+.content-section .a-news .news-date{
+    font-family: "Hiragino Kaku Gothic Pro";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    color: #1A4A82;
+}
+
+.content-section .a-news .news-content{
+    font-family: 'Hiragino Kaku Gothic Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+    color: #000000;
+}
+
+/* media query */
+
+@media only screen and (max-width: 1279px) {
+    .about-section-content .picture img{
+        width: 90%;
+        height: auto;
+    }
+
+    .slide .hero-title-detail{
+        font-size: 8.9vw;
+        line-height: 8vw;
+        left: 10%;
+    }
+}
+
+@media only screen and (max-width: 1099px) {
+    .slide .search-form form{
+        width: 35vw;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .about-section-content .picture img{
+        display: none;
+    }
+
+    .about-section .small-title{
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 29px;
+    }
+
+    .about-section .title{
+        width: 80%;
+        margin: auto;
+        font-size: 36px;
+        line-height: 43px;
+    }
+
+    .about-section .about-section-content .main-content{
+        margin-bottom: 6vw;
+    }
+
+    .about-section .value{
+        margin-bottom: 4vw;
+    }
+
+    .slide .search-form form{
+        display: none;
+    }
+
+    .slide .hero-title .hero-title-detail{
+        left: 2vw;
+        top: 298px;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .content-section .title{
+        font-size: 36px;
+        line-height: 43px;
+    }
+
+    .content-section .description{
+        font-size: 12px;
+        line-height: 18px;
+        width: 95%;
+        margin: auto;
+        margin-bottom: 5vw;
+    }
+
+    .content-section .a-news .news-date{
+        font-size: 12px;
+        line-height: 12px;
+    }
+
+    .content-section .a-news .news-content{
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .about-section .title{
+        margin-bottom: 10vw !important;
+    }
+}
+
+@media only screen and (max-width: 389px) {
+    .content-section button{
+        width: 95%;
+        height: 9vh;
+        margin: auto;
+        margin-bottom: 5vw;
+        margin-top: 5vw;
+
+        font-size: 6.5vw;
+    }
+
+    .content-section .title{
+        line-height: 12vw;
+    }
+
+    .about-section .small-title{
+        font-size: 6.5vw !important;
+        line-height: 29px;
+    }
+
+    .about-section .title{
+        font-size: 12vw !important;
+        line-height: 13vw !important;
+    }
+
+    .about-section .about-section-content .main-content,
+    .about-section .value .value-detail{
+        font-size: 3.1vw !important;
+        line-height: 4.5vw !important;
+    }
+
+    .slide .hero-title .hero-title-detail{
+        font-size: 12vw;
+        line-height: 12vw;
+        text-align: center;
+    }
+}
+

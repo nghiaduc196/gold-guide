@@ -1,7 +1,7 @@
 _core:
   default_config_hash: HENvUIeX6xNPGRB1w3z6rT9a71LM_hKXATF6XrM9WvM
 langcode: ja
-smtp_on: true
+smtp_on: false
 smtp_host: smtp.gmail.com
 smtp_hostbackup: smtp.gmail.com
 smtp_port: '587'
@@ -15,7 +15,7 @@ smtp_fromname: 'Hello world'
 smtp_client_hostname: ''
 smtp_client_helo: ''
 smtp_allowhtml: '1'
-smtp_test_address: ipmac.vinhdv@gmail.com
+smtp_test_address: test@gmail.com
 smtp_reroute_address: ''
 smtp_debugging: true
 prev_mail_system: php_mail

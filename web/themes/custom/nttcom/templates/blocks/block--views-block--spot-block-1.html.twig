@@ -1,20 +1,22 @@
 <div class="carousel-custom">
   <h3 class="title">{{ content['#title']['#markup'] }}</h3>
-  <div class="owl-carousel owl-theme">
+  <div class="owl-carousel owl-theme owl-carousel-responsive">
     {% for spot in content['#view'].result %}
       <div class="item">
         <div class="card-title">
           <div class="body-image">
             <a href="{{ path('entity.node.canonical', {'node': spot._entity.id}) }}">
               {% if spot._entity.field_image.entity.uri.value %}
-                <img class="w-100" src="{{ file_url(spot._entity.field_image.entity.uri.value) }}" onerror="this.onerror=null;this.src='/{{ directory ~'/images/default-spot.png' }}';"/>
+                <img class="w-100" src="{{ file_url(spot._entity.field_image.entity.uri.value) }}"
+                     onerror="this.onerror=null;this.src='/{{ directory ~'/images/default-spot.png' }}';"/>
               {% else %}
-                <img class="w-100" src="/{{ directory ~'/images/default-spot.png' }}" />
+                <img class="w-100" src="/{{ directory ~'/images/default-spot.png' }}"/>
               {% endif %}
             </a>
           </div>
           <div class="body-content">
-            <a href="{{ path('entity.node.canonical', {'node': spot._entity.id}) }}"><span class="title-content">{{ spot._entity.title.value }}</span></a>
+            <a href="{{ path('entity.node.canonical', {'node': spot._entity.id}) }}"><span
+                class="title-content">{{ spot._entity.title.value }}</span></a>
           </div>
         </div>
       </div>

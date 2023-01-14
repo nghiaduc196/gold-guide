@@ -1,0 +1,47 @@
+<div class="row md-form">
+  <div class="col-md-6">
+    {{ form.elements.first_name }}
+  </div>
+  <div class="col-md-6">
+    {{ form.elements.last_name }}
+  </div>
+</div>
+<div class="row md-form">
+  <div class="col-md-12">
+    {{ form.elements.area }}
+  </div>
+</div>
+<div class="row md-form">
+  <div class="col-md-6">
+    {{ form.elements.national_license }}
+  </div>
+  <div class="col-md-6">
+    {{ form.elements.region_license }}
+  </div>
+</div>
+<div class="row md-form">
+  <div class="col-md-6">
+    {{ form.elements.operation_day }}
+  </div>
+  <div class="col-md-6">
+    {{ form.elements.working_day }}
+  </div>
+</div>
+<div class="row md-form">
+  <div class="col-md-12 mb-3">
+    {{ form.elements.other_qualification }}
+  </div>
+  <div class="col-md-12 mb-3">
+    {{ form.elements.email }}
+  </div>
+  <div class="col-md-12 mb-3">
+    {{ form.elements.phone_number }}
+  </div>
+</div>
+{{ form.elements.actions }}
+{{ form.form_build_id }}
+{{ form.form_token }}
+{{ form.form_id }}
+<div class="mt-5 mb-5">
+  [送信]をクリックすると、利用規約とプライバシーポリシーに同意したことになります。
+</div>

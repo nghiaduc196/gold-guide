@@ -100,40 +100,36 @@
 
 {% if items %}
 
-  <div class="text-center">
-    <nav aria-label="Page navigation example">
-      <ul class="pagination justify-content-center">
+    <div class="text-center">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
 
-        {% if items.previous %}
+                {% if items.previous %}
 
-          <li class="page-item"><a title="{{ 'Go to first page'|t }}" class="page-link text-dark" href="{{ items.previous.href }}">{{ items.previous.text|default('previous'|t) }}</a></li>
+                    <li class="page-item"><a title="{{ 'Go to first page'|t }}" class="page-link text-dark" href="{{ items.previous.href }}">{{ items.previous.text|default('previous'|t) }}</a></li>
 
-        {% endif %}
+                {% endif %}
 
-        {% for key, item in items.pages %}
+                {% for key, item in items.pages %}
 
-          <li class="page-item pag-custom {{ current == key ? ' is-active active' : '' }}">
-            {% if current == key %}
-              {% set title = 'Current page'|t %}
-            {% else %}
-              {% set title = 'Go to page @key'|t({'@key': key}) %}
-            {% endif %}
-            <a class="page-link text-dark" href="{{ item.href }}" title="{{ title }}"{{ item.attributes }}>
-              {{- key -}}
-            </a>
-          </li>
-        {% endfor %}
+                    <li class="page-item pag-custom {{ current == key ? ' is-active active' : '' }}">
+                        {% if current == key %}
+                            {% set title = 'Current page'|t %}
+                        {% else %}
+                            {% set title = 'Go to page @key'|t({'@key': key}) %}
+                        {% endif %}
+                        <a class="page-link text-dark" href="{{ item.href }}" title="{{ title }}"{{ item.attributes }}>
+                            {{- key -}}
+                        </a>
+                    </li>
+                {% endfor %}
 
-        {% if items.next %}
-          <li class="page-item"><a class="page-link text-dark" href="{{ items.next.href }}">{{ items.next.text|default('next'|t) }}</a></li>
-        {% endif %}
+                {% if items.next %}
+                    <li class="page-item"><a class="page-link text-dark" href="{{ items.next.href }}">{{ items.next.text|default('next'|t) }}</a></li>
+                {% endif %}
 
-      </ul>
-    </nav>
-  </div>
+            </ul>
+        </nav>
+    </div>
 
 {% endif %}
-
-
-
-

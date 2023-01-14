@@ -1,0 +1,9 @@
+<fieldset class="user-input">
+  <legend> {{ label }}</legend>
+  {{ children }}
+  {% if errors %}
+    <div class="form-item--error-message error">
+      {{ errors }}
+    </div>
+  {% endif %}
+</fieldset>

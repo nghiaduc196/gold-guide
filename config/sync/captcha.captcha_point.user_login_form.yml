@@ -1,9 +1,0 @@
-uuid: 9e364392-00fe-420a-9948-9a4ad88f386f
-langcode: ja
-status: true
-dependencies: {  }
-_core:
-  default_config_hash: XbughDuwgOtc_8ztmYxz84gaXBeR760xH3bGSKD9v1Q
-formId: user_login_form
-captchaType: recaptcha/reCAPTCHA
-label: user_login_form

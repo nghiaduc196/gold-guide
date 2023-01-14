@@ -1,0 +1,14 @@
+nttcom_user.user_page:
+  title: 'My account'
+  route_name: user.page
+  menu_name: user-menu
+
+nttcom_user.change_password:
+  title: 'Change password'
+  route_name: nttcom_change_pwd_page.change_password
+  menu_name: user-menu
+
+nttcom_user.cancel_account:
+  title: 'Cancel account'
+  route_name: nttcom_user.cancel_account
+  menu_name: user-menu

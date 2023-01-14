@@ -1,0 +1,3 @@
+action.configuration.user_reject_action:
+  type: mapping
+  label: 'Reject user'

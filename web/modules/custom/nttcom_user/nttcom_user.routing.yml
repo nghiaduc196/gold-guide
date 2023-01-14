@@ -5,3 +5,19 @@ nttcom_user.verification_mail_exist_form:
     _title: 'Verification mail exist form'
   requirements:
     _access: 'TRUE'
+
+nttcom_user.guide_entry_form:
+  path: '/guide-entry'
+  defaults:
+    _form: '\Drupal\nttcom_user\Form\GuideEntryForm'
+    _title: 'Guide Entry'
+  requirements:
+    _user_is_logged_in: 'TRUE'
+
+nttcom_user.cancel_account:
+  path: '/user/cancel-account'
+  defaults:
+    _title: 'Cancel account'
+    _form: 'Drupal\nttcom_user\Form\CancelAccountForm'
+  requirements:
+    _user_is_logged_in: 'TRUE'

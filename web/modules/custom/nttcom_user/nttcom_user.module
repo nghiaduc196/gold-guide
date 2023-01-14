@@ -12,77 +12,93 @@ use Drupal\Core\Entity\EntityInterface;
 use Drupal\user\Entity\User;
 
 define('ROLE_GUIDE', 'guide');
+define('ROLE_SUPER_ADMIN', 'administrator');
+define('ROLE_OFFICE', 'office');
+define('ROLE_GUEST', 'guest');
+
+
+/**
+ * Implements hook_theme().
+ */
+function nttcom_user_theme($existing, $type, $theme, $path) {
+  return [
+    'nttcom_guide_entry_form' => [
+      'render element' => 'form',
+      'template' => 'nttcom-guide-entry-form',
+    ],
+  ];
+}
+
 
 /**
  * Implements hook_form_alter().
  */
 function nttcom_user_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-//  if ($form_id == 'change_pwd_form') {
-//    $form['#submit'][] = 'nttcom_user_return_page_login';
-//  }
-  if ($form_id == 'webform_submission_register_by_guide_add_form') {
-    if ($form['progress']['#current_page'] == 'register_by_guide') {
-      $form['actions']['submit']['#access'] = FALSE;
-    }
-    if ($form['progress']['#current_page'] == 'webform_preview') {
-//      $form['actions']['submit']['#access'] = FALSE;
-    }
-  }
-  if($form_id == 'user_register_form') {
+  $current_user = \Drupal::currentUser();
+  if ($form_id == 'user_register_form') {
     $param = \Drupal::request()->query->all();
-    if (\Drupal::currentUser()->isAnonymous()) {
+    if ($current_user->isAnonymous()) {
       $form['account']['mail']['#default_value'] = $param['email_verification'];
-      $form['account']['mail']['#attributes'] = ['readonly' => 'readonly'];
       $form['account']['pass']['#access'] = FALSE;
+      $form['field_intro']['#access'] = FALSE;
     }
     $form['user_picture']['#access'] = FALSE;
     $form['contact']['#access'] = FALSE;
     $form['#validate'][] = 'nttcom_user_form_user_post_validate';
   }
 
-  if(in_array($form_id, ['user_register_form', 'user_form'])) {
-    if (\Drupal::currentUser()->isAnonymous() || in_array('guest',\Drupal::currentUser()->getRoles())) {
+  if (in_array($form_id, ['user_register_form', 'user_form'])) {
+    if ($current_user->isAnonymous() || in_array('guest', $current_user->getRoles())) {
+      //      $form['account']['mail']['#attributes'] = ['readonly' => 'readonly'];
       $form['field_price']['#access'] = FALSE;
+      $form['field_license_global']['#access'] = FALSE;
+      $form['field_license_local']['#access'] = FALSE;
+      $form['field_license_other']['#access'] = FALSE;
+      $form['field_ranking']['#access'] = FALSE;
+      $form['field_tags']['#access'] = FALSE;
+      $form['field_language']['#access'] = FALSE;
+    }
+    if (!in_array(ROLE_SUPER_ADMIN, $current_user->getRoles())) {
+      $form['field_approval_status']['#access'] = FALSE;
     }
     $form['account']['current_pass']['#access'] = FALSE;
     $form['account']['name']['#required'] = FALSE;
     $form['account']['name']['#access'] = FALSE;
     array_unshift($form['#validate'], 'nttcom_user_prepare_form_user_values');
   }
+  if ($form_id == 'user_register_form' && !in_array(ROLE_SUPER_ADMIN, $current_user->getRoles())) {
+    $form['actions']['submit']['#submit'][] = '_user_register_custom_submit';
+  }
 }
 
-/**
- * Implements hook_form_FORM_ID_alter().
- */
-function nttcom_user_form_user_register_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  // Add a role to the registration form for user.
-//  $options = [
-//    'guest' => 'Guest',
-//    'guide' => 'Guide',
-//  ];
-//  $form['role_registration'] = [
-//    '#type' => 'select',
-//    '#options' => $options,
-//    '#default_value' => 'guest',
-//    '#title' => t("Choose role registration in site."),
-//    '#required' => TRUE,
-//  ];
+function _user_register_custom_submit($form, FormStateInterface $form_state) {
+  $form_state->setRedirect('<front>');
 }
+
 
 /**
  * Implements hook_ENTITY_TYPE_presave().
  */
 function nttcom_user_user_presave(EntityInterface $account) {
+  $role = $account->getRoles();
+  $current_user = Drupal::currentUser();
+  if ($account->isNew() && in_array(ROLE_GUIDE, $role)) {
+    $account->field_approval_status->value = 'new_account_guide';
+  }
+  if (!in_array(ROLE_SUPER_ADMIN, $role) && $account->isNew()) {
+    $account->addRole(ROLE_GUEST);
+  }
   if (!empty($account->field_first_name->value) && !empty($account->field_last_name->value)) {
-    $full_name = trim($account->field_first_name->value ?? "").' '.trim($account->field_last_name->value ?? "");
+    $full_name = trim($account->field_first_name->value ?? "") . ' ' . trim($account->field_last_name->value ?? "");
     $account->setUsername($full_name);
-  } else {
+  }
+  else {
     $account->setUsername($account->getEmail());
   }
   if (isset($account->original)) {
     $original_role = $account->original->getRoles();
     $updated_role = $account->getRoles();
-    if(!in_array('guide', $original_role) && in_array('guide', $updated_role)) {
+    if (!in_array(ROLE_GUIDE, $original_role) && in_array(ROLE_GUIDE, $updated_role)) {
       $mailManager = \Drupal::service('plugin.manager.mail');
       $message_body = t('Update role guide ');
       $module = 'nttcom_user';
@@ -92,7 +108,7 @@ function nttcom_user_user_presave(EntityInterface $account) {
       $params['user_name'] = $account->getAccountName();
       $langcode = \Drupal::currentUser()->getPreferredLangcode();
       $send = TRUE;
-  
+
       $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
       if ($result['result'] !== TRUE) {
         $message = t('There was a problem sending your email notification to @email.', ['@email' => $to]);
@@ -112,9 +128,9 @@ function nttcom_user_user_presave(EntityInterface $account) {
  * Implements hook_mail().
  */
 function nttcom_user_mail($key, &$message, $params) {
-  $options = array(
+  $options = [
     'langcode' => $message['langcode'],
-  );
+  ];
   switch ($key) {
     case 'add_role_guide':
       $message['from'] = \Drupal::config('system.site')->get('mail');
@@ -140,13 +156,13 @@ function nttcom_user_prepare_form_user_values(&$form, FormStateInterface $form_s
   if (!empty($form_state->getValue('field_first_name')) && !empty($form_state->getValue('field_last_name'))) {
     $first_name = trim($form_state->getValue('field_first_name')[0]['value'] ?? "");
     $last_name = trim($form_state->getValue('field_last_name')[0]['value'] ?? "");
-    $full_name = $first_name.' '.$last_name;
+    $full_name = $first_name . ' ' . $last_name;
   }
   $name = $form_state->getValue('mail');
   if ($user = user_load_by_name($full_name ?? $name)) {
     /** @var \Drupal\Core\Entity\EntityFormInterface $formObject */
     $formObject = $form_state->getFormObject();
-    
+
     if ($user->id() != $formObject->getEntity()->id()) {
       $constraint = new UserNameUnique();
       if (isset($full_name)) {
@@ -158,7 +174,7 @@ function nttcom_user_prepare_form_user_values(&$form, FormStateInterface $form_s
       }
     }
   }
-  
+
   if (isset($full_name)) {
     if ($error = user_validate_name($full_name)) {
       $form_state->setErrorByName('field_first_name', $error);
@@ -170,12 +186,13 @@ function nttcom_user_prepare_form_user_values(&$form, FormStateInterface $form_s
       $form_state->setErrorByName('mail', $error);
     }
   }
-  
+
   $form_state->setValue('name', $full_name ?? $name);
 }
 
 /**
  * Remove the errors related to 'name' field.
+ *
  * @param $form
  * @param \Drupal\Core\Form\FormStateInterface $form_state
  */
@@ -183,7 +200,7 @@ function nttcom_user_form_user_post_validate(&$form, FormStateInterface $form_st
   $errors = $form_state->getErrors();
   unset($errors['name']);
   $form_state->clearErrors();
-  foreach($errors as $field => $value) {
+  foreach ($errors as $field => $value) {
     $form_state->setErrorByName($field, $value);
   }
 }
@@ -194,11 +211,12 @@ function nttcom_user_return_page_login(array &$form, FormStateInterface $form_st
 }
 
 function nttcom_user_user_login(UserInterface $account) {
-  if (in_array('administrator', $account->getRoles()) || in_array('office', $account->getRoles())) {
-    \Drupal::service('request_stack')->getCurrentRequest()->query->set('destination', '/');
+  if (in_array(ROLE_SUPER_ADMIN, $account->getRoles()) || in_array(ROLE_OFFICE, $account->getRoles())) {
+    \Drupal::service('request_stack')
+      ->getCurrentRequest()->query->set('destination', '/');
   }
-    if (!in_array('guide', $account->getRoles()) && !in_array('office', $account->getRoles()) &&
-     !in_array('administrator', $account->getRoles())) {
+  if (!in_array(ROLE_GUIDE, $account->getRoles()) && !in_array(ROLE_OFFICE, $account->getRoles()) &&
+    !in_array(ROLE_SUPER_ADMIN, $account->getRoles())) {
     $user = User::load($account->id());
     $user->addRole('guest');
   }

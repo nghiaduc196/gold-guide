@@ -1,0 +1,31 @@
+{% if page.header %}
+  <nav class="navbar navbar-expand-lg navbar-light bg-header py-1 py-md-2 position-sticky top-0 z-index-9999">
+    {{ page.header }}
+  </nav>
+{% endif %}
+<main role="main">
+  <div class="container-fluid">
+    <div class="row">
+      {% if page.sidebar %}
+        <div class="col-md-3">
+          {{ page.sidebar }}
+        </div>
+      {% endif %}
+      {% block main %}
+        <div class="col-md-9">
+          {{ page.content }}
+        </div>
+      {% endblock %}
+    </div>
+  </div>
+</main>
+<footer class="site-footer bg-header">
+  <ul class="menu-footer p-0 m-0">
+    {% if page.footer %}
+      {{ page.footer }}
+    {% endif %}
+  </ul>
+  <div class="copy-right text-center">
+    <span>Copyright ©  All Rights Reserved.</span>
+  </div>
+</footer>

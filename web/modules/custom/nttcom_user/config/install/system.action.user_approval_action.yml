@@ -1,0 +1,6 @@
+id: user_approval_action
+label: 'Approval user'
+status: true
+langcode: en
+type: user
+plugin: user_approval_action

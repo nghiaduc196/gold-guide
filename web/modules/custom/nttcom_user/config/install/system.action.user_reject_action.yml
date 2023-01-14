@@ -1,0 +1,6 @@
+id: user_reject_action
+label: 'Reject user'
+status: true
+langcode: en
+type: user
+plugin: user_reject_action

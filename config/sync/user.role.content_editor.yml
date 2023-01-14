@@ -3,6 +3,7 @@ langcode: ja
 status: true
 dependencies:
   config:
+    - filter.format.rich_text
     - node.type.article
     - node.type.page
     - taxonomy.vocabulary.tags
@@ -10,6 +11,7 @@ dependencies:
     - comment
     - contextual
     - file
+    - filter
     - node
     - path
     - system
@@ -43,6 +45,7 @@ permissions:
   - 'edit own page content'
   - 'edit terms in tags'
   - 'revert all revisions'
+  - 'use text format rich_text'
   - 'view all revisions'
   - 'view own unpublished content'
   - 'view the administration theme'

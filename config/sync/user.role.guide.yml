@@ -1,9 +1,15 @@
 uuid: d29d1ab9-c1bc-4e6b-870a-74cf35fbb124
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.rich_text
+  module:
+    - filter
 id: guide
 label: Guide
 weight: 4
 is_admin: null
-permissions: {  }
+permissions:
+  - 'access user profiles'
+  - 'use text format rich_text'

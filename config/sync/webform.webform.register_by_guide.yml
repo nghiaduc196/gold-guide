@@ -52,8 +52,10 @@ elements: |-
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'
+    '#submit__label': Submit
     '#update_hide': true
-    '#preview_next_hide': true
+    '#wizard_prev__label': Previous
+    '#wizard_next__label': Next
 css: ''
 javascript: ''
 settings:
@@ -130,7 +132,7 @@ settings:
   wizard_progress_states: false
   wizard_start_label: ''
   wizard_preview_link: false
-  wizard_confirmation: false
+  wizard_confirmation: true
   wizard_confirmation_label: ''
   wizard_auto_forward: true
   wizard_auto_forward_hide_next_button: false
@@ -141,14 +143,13 @@ settings:
   wizard_toggle: true
   wizard_toggle_show_label: ''
   wizard_toggle_hide_label: ''
-  preview: 1
+  preview: 2
   preview_label: ''
   preview_title: ''
   preview_message: ''
   preview_attributes: {  }
   preview_excluded_elements:
     terms_of_service: terms_of_service
-    captcha: captcha
   preview_exclude_empty: true
   preview_exclude_empty_checkbox: false
   draft: none
@@ -160,8 +161,8 @@ settings:
   draft_pending_multiple_message: ''
   confirmation_type: modal
   confirmation_url: ''
-  confirmation_title: ''
-  confirmation_message: ''
+  confirmation_title: 'Thank you!'
+  confirmation_message: 'Your application has been sent, We are going to check and will feedback to you.'
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''

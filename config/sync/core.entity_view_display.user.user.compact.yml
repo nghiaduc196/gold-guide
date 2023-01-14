@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
+    - field.field.user.user.field_addination_info
     - field.field.user.user.field_address
     - field.field.user.user.field_approval_status
     - field.field.user.user.field_birthday
@@ -13,11 +14,9 @@ dependencies:
     - field.field.user.user.field_language
     - field.field.user.user.field_last_name
     - field.field.user.user.field_last_password_reset
-    - field.field.user.user.field_license_global
-    - field.field.user.user.field_license_local
-    - field.field.user.user.field_license_other
     - field.field.user.user.field_password_expiration
     - field.field.user.user.field_pending_expire_sent
+    - field.field.user.user.field_phone_number
     - field.field.user.user.field_price
     - field.field.user.user.field_ranking
     - field.field.user.user.field_tags
@@ -45,6 +44,7 @@ content:
     weight: 0
     region: content
 hidden:
+  field_addination_info: true
   field_address: true
   field_approval_status: true
   field_birthday: true
@@ -54,11 +54,9 @@ hidden:
   field_language: true
   field_last_name: true
   field_last_password_reset: true
-  field_license_global: true
-  field_license_local: true
-  field_license_other: true
   field_password_expiration: true
   field_pending_expire_sent: true
+  field_phone_number: true
   field_price: true
   field_ranking: true
   field_tags: true

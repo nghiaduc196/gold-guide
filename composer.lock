@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0a43ab8906b00e06b0bce1e0a943200e",
+    "content-hash": "de93d2f74307ce6dbb5bf0bfd564e0d1",
     "packages": [
         {
             "name": "algolia/places",
@@ -16,7 +16,10 @@
             "type": "drupal-library",
             "extra": {
                 "installer-name": "algolia.places"
-            }
+            },
+            "license": [
+                "MIT"
+            ]
         },
         {
             "name": "asm89/stack-cors",
@@ -262,84 +265,105 @@
             "version": "9.0.1",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/jshjohnson/Choices/archive/v9.0.1.zip"
+                "url": "https://github.com/Choices-js/Choices/archive/refs/tags/v9.0.1.zip"
             },
             "type": "drupal-library",
             "extra": {
                 "installer-name": "choices"
-            }
+            },
+            "license": [
+                "MIT"
+            ]
         },
         {
             "name": "ckeditor/autogrow",
-            "version": "4.17.1",
+            "version": "4.18.0",
             "dist": {
                 "type": "zip",
-                "url": "https://download.ckeditor.com/autogrow/releases/autogrow_4.17.1.zip"
+                "url": "https://download.ckeditor.com/autogrow/releases/autogrow_4.18.0.zip"
             },
             "type": "drupal-library",
             "extra": {
                 "installer-name": "ckeditor.autogrow"
-            }
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ]
         },
         {
             "name": "ckeditor/codemirror",
-            "version": "v1.17.12",
+            "version": "v1.18.3",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/w8tcha/CKEditor-CodeMirror-Plugin/releases/download/v1.17.12/CKEditor-CodeMirror-Plugin.zip"
+                "url": "https://github.com/w8tcha/CKEditor-CodeMirror-Plugin/releases/download/v1.18.3/CKEditor-CodeMirror-Plugin.zip"
             },
             "type": "drupal-library",
             "extra": {
                 "installer-name": "ckeditor.codemirror"
-            }
+            },
+            "license": [
+                "MIT"
+            ]
         },
         {
             "name": "ckeditor/fakeobjects",
-            "version": "4.17.1",
+            "version": "4.18.0",
             "dist": {
                 "type": "zip",
-                "url": "https://download.ckeditor.com/fakeobjects/releases/fakeobjects_4.17.1.zip"
+                "url": "https://download.ckeditor.com/fakeobjects/releases/fakeobjects_4.18.0.zip"
             },
             "type": "drupal-library",
             "extra": {
                 "installer-name": "ckeditor.fakeobjects"
-            }
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ]
         },
         {
             "name": "ckeditor/image",
-            "version": "4.17.1",
+            "version": "4.18.0",
             "dist": {
                 "type": "zip",
-                "url": "https://download.ckeditor.com/image/releases/image_4.17.1.zip"
+                "url": "https://download.ckeditor.com/image/releases/image_4.18.0.zip"
             },
             "type": "drupal-library",
             "extra": {
                 "installer-name": "ckeditor.image"
-            }
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ]
         },
         {
             "name": "ckeditor/link",
-            "version": "4.17.1",
+            "version": "4.18.0",
             "dist": {
                 "type": "zip",
-                "url": "https://download.ckeditor.com/link/releases/link_4.17.1.zip"
+                "url": "https://download.ckeditor.com/link/releases/link_4.18.0.zip"
             },
             "type": "drupal-library",
             "extra": {
                 "installer-name": "ckeditor.link"
-            }
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ]
         },
         {
             "name": "codemirror/codemirror",
-            "version": "5.61.1",
+            "version": "5.65.3",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/components/codemirror/archive/5.61.1.zip"
+                "url": "https://github.com/components/codemirror/archive/refs/tags/5.65.3.zip"
             },
             "type": "drupal-library",
             "extra": {
                 "installer-name": "codemirror"
-            }
+            },
+            "license": [
+                "MIT"
+            ]
         },
         {
             "name": "commerceguys/addressing",
@@ -1982,26 +2006,26 @@
         },
         {
             "name": "drupal/bootstrap4",
-            "version": "2.1.15",
+            "version": "2.1.16",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/bootstrap4.git",
-                "reference": "2.1.15"
+                "reference": "2.1.16"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/bootstrap4-2.1.15.zip",
-                "reference": "2.1.15",
-                "shasum": "483abee391da096e1af748ca27b2dfd18b35241b"
+                "url": "https://ftp.drupal.org/files/projects/bootstrap4-2.1.16.zip",
+                "reference": "2.1.16",
+                "shasum": "fb90f094d532b13c4c1059130f96b060812757c5"
             },
             "require": {
-                "drupal/core": "^9 || ^10"
+                "drupal/core": "^9.4"
             },
             "type": "drupal-theme",
             "extra": {
                 "drupal": {
-                    "version": "2.1.15",
-                    "datestamp": "1659076902",
+                    "version": "2.1.16",
+                    "datestamp": "1673013132",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2010,21 +2034,25 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0"
+                "GPL-2.0-or-later"
             ],
             "authors": [
+                {
+                    "name": "Janna M (jannakha)",
+                    "homepage": "https://www.drupal.org/u/jannakha",
+                    "role": "Maintainer"
+                },
                 {
                     "name": "Vladimir Roudakov (vladimiraus)",
                     "homepage": "https://www.drupal.org/u/vladimiraus",
                     "role": "Maintainer"
-                },
-                {
-                    "name": "VladimirAus",
-                    "homepage": "https://www.drupal.org/user/673120"
                 }
             ],
             "description": "Master theme using Bootstrap 4: powerful front-end framework for faster and easier web development.",
             "homepage": "https://www.drupal.org/project/bootstrap4",
+            "keywords": [
+                "Drupal"
+            ],
             "support": {
                 "source": "https://git.drupalcode.org/project/bootstrap4",
                 "issues": "https://www.drupal.org/project/issues/bootstrap4"
@@ -2628,7 +2656,7 @@
         },
         {
             "name": "drupal/core-composer-scaffold",
-            "version": "9.5.0",
+            "version": "9.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-composer-scaffold.git",
@@ -2672,13 +2700,13 @@
                 "drupal"
             ],
             "support": {
-                "source": "https://github.com/drupal/core-composer-scaffold/tree/9.5.0"
+                "source": "https://github.com/drupal/core-composer-scaffold/tree/9.5.1"
             },
             "time": "2022-06-19T16:14:18+00:00"
         },
         {
             "name": "drupal/core-project-message",
-            "version": "9.5.0",
+            "version": "9.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-project-message.git",
@@ -2713,7 +2741,7 @@
                 "drupal"
             ],
             "support": {
-                "source": "https://github.com/drupal/core-project-message/tree/9.5.0"
+                "source": "https://github.com/drupal/core-project-message/tree/9.5.1"
             },
             "time": "2022-02-24T17:40:53+00:00"
         },
@@ -3625,26 +3653,26 @@
         },
         {
             "name": "drupal/languagefield",
-            "version": "1.8.0",
+            "version": "1.9.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/languagefield.git",
-                "reference": "8.x-1.8"
+                "reference": "8.x-1.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/languagefield-8.x-1.8.zip",
-                "reference": "8.x-1.8",
-                "shasum": "b8a0caafb0bdffdc813ef02920bdf996c210a554"
+                "url": "https://ftp.drupal.org/files/projects/languagefield-8.x-1.9.zip",
+                "reference": "8.x-1.9",
+                "shasum": "18b2c713217a7a2094abdcc9c1379dd81c2cdfa4"
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^8 || ^9 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.8",
-                    "datestamp": "1657799214",
+                    "version": "8.x-1.9",
+                    "datestamp": "1672828824",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3731,6 +3759,126 @@
                 "source": "https://git.drupalcode.org/project/mail_login",
                 "issues": "http://drupal.org/project/issues/mail_login",
                 "email": "mqanneh@gmail.com"
+            }
+        },
+        {
+            "name": "drupal/maillog",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/maillog.git",
+                "reference": "8.x-1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/maillog-8.x-1.0.zip",
+                "reference": "8.x-1.0",
+                "shasum": "3929d5c937187fe31c1459da42e4198836119cfe"
+            },
+            "require": {
+                "drupal/core": "^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0",
+                    "datestamp": "1665746345",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Berdir",
+                    "homepage": "https://www.drupal.org/user/214652"
+                },
+                {
+                    "name": "DamienMcKenna",
+                    "homepage": "https://www.drupal.org/user/108450"
+                },
+                {
+                    "name": "miro_dietiker",
+                    "homepage": "https://www.drupal.org/user/227761"
+                },
+                {
+                    "name": "pluess",
+                    "homepage": "https://www.drupal.org/user/84659"
+                }
+            ],
+            "description": "Utility to log all Mails for debugging purposes. It is possible to suppress mail delivery for e.g. dev or staging systems.",
+            "homepage": "https://www.drupal.org/project/maillog",
+            "support": {
+                "source": "https://git.drupalcode.org/project/maillog"
+            }
+        },
+        {
+            "name": "drupal/mailsystem",
+            "version": "4.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/mailsystem.git",
+                "reference": "8.x-4.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/mailsystem-8.x-4.4.zip",
+                "reference": "8.x-4.4",
+                "shasum": "49b2e9efd090cdb4a282c7638b1c76d6723c47b6"
+            },
+            "require": {
+                "drupal/core": "^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-4.4",
+                    "datestamp": "1657576306",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Berdir",
+                    "homepage": "https://www.drupal.org/user/214652"
+                },
+                {
+                    "name": "Les Lim",
+                    "homepage": "https://www.drupal.org/user/84263"
+                },
+                {
+                    "name": "Manuel Garcia",
+                    "homepage": "https://www.drupal.org/user/213194"
+                },
+                {
+                    "name": "miro_dietiker",
+                    "homepage": "https://www.drupal.org/user/227761"
+                },
+                {
+                    "name": "Nafes",
+                    "homepage": "https://www.drupal.org/user/2489926"
+                },
+                {
+                    "name": "pillarsdotnet",
+                    "homepage": "https://www.drupal.org/user/36148"
+                }
+            ],
+            "description": "Mail System",
+            "homepage": "https://www.drupal.org/project/mailsystem",
+            "support": {
+                "source": "https://git.drupalcode.org/project/mailsystem"
             }
         },
         {
@@ -4450,6 +4598,10 @@
                 {
                     "name": "japerry",
                     "homepage": "https://www.drupal.org/user/45640"
+                },
+                {
+                    "name": "joseph.olstad",
+                    "homepage": "https://www.drupal.org/user/1321830"
                 },
                 {
                     "name": "josesanmartin",
@@ -5210,17 +5362,17 @@
         },
         {
             "name": "drupal/webform",
-            "version": "6.1.3",
+            "version": "6.1.4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/webform.git",
-                "reference": "6.1.3"
+                "reference": "6.1.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/webform-6.1.3.zip",
-                "reference": "6.1.3",
-                "shasum": "efd032eadc10a4752b9b0203152a5d20eefac175"
+                "url": "https://ftp.drupal.org/files/projects/webform-6.1.4.zip",
+                "reference": "6.1.4",
+                "shasum": "b1c27c2a210670b6d149cdd92cbb37100b19cf64"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9"
@@ -5230,9 +5382,9 @@
                 "drupal/bootstrap": "~3.0",
                 "drupal/captcha": "~1.0",
                 "drupal/chosen": "~3.0",
-                "drupal/clientside_validation": "~3.0",
+                "drupal/clientside_validation": "~4.0",
                 "drupal/clientside_validation_jquery": "*",
-                "drupal/devel": "~3.0",
+                "drupal/devel": "~5.0",
                 "drupal/entity": "~1.0",
                 "drupal/entity_print": "~2.0",
                 "drupal/gnode": "*",
@@ -5245,7 +5397,7 @@
                 "drupal/paragraphs": "~1.0",
                 "drupal/select2": "~1.0",
                 "drupal/smtp": "~1.0",
-                "drupal/styleguide": "~1.0",
+                "drupal/styleguide": "~2.0",
                 "drupal/telephone_validation": "~2.0",
                 "drupal/token": "~1.0",
                 "drupal/variationcache": "~1.0",
@@ -5268,8 +5420,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "6.1.3",
-                    "datestamp": "1644940723",
+                    "version": "6.1.4",
+                    "datestamp": "1673535467",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5292,14 +5444,13 @@
                     "role": "Maintainer"
                 },
                 {
-                    "name": "Alexander Trotsenko (bucefal91)",
-                    "homepage": "https://www.drupal.org/u/bucefal91",
-                    "role": "Co-maintainer"
-                },
-                {
                     "name": "Contributors",
                     "homepage": "https://www.drupal.org/node/7404/committers",
                     "role": "Contributor"
+                },
+                {
+                    "name": "Liam Morland",
+                    "homepage": "https://www.drupal.org/user/493050"
                 },
                 {
                     "name": "quicksketch",
@@ -5321,28 +5472,31 @@
         },
         {
             "name": "drupal/webform_xlsx_export",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/webform_xlsx_export.git",
-                "reference": "8.x-1.0"
+                "reference": "8.x-1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/webform_xlsx_export-8.x-1.0.zip",
-                "reference": "8.x-1.0",
-                "shasum": "155c3e33e5c83d1df06f0d6e5774ccc727c502fc"
+                "url": "https://ftp.drupal.org/files/projects/webform_xlsx_export-8.x-1.1.zip",
+                "reference": "8.x-1.1",
+                "shasum": "1865cfd236b7a26db8a0761c8c69a604d1814226"
             },
             "require": {
-                "drupal/core": "^8 || ^9",
+                "drupal/core": "^8 || ^9 || ^10",
                 "drupal/webform": "*",
                 "phpoffice/phpspreadsheet": "^1.9"
+            },
+            "require-dev": {
+                "vijaycs85/drupal-quality-checker": "^1.3"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0",
-                    "datestamp": "1576504091",
+                    "version": "8.x-1.1",
+                    "datestamp": "1673270360",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6548,31 +6702,40 @@
             "type": "drupal-library",
             "extra": {
                 "installer-name": "jquery.chosen"
-            }
+            },
+            "license": [
+                "MIT"
+            ]
         },
         {
             "name": "jquery/geocomplete",
             "version": "1.7.0",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/ubilabs/geocomplete/archive/1.7.0.zip"
+                "url": "https://github.com/ubilabs/geocomplete/archive/refs/tags/1.7.0.zip"
             },
             "type": "drupal-library",
             "extra": {
                 "installer-name": "jquery.geocomplete"
-            }
+            },
+            "license": [
+                "MIT"
+            ]
         },
         {
             "name": "jquery/hotkeys",
             "version": "0.2.0",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/jeresig/jquery.hotkeys/archive/0.2.0.zip"
+                "url": "https://github.com/jeresig/jquery.hotkeys/archive/refs/tags/0.2.0.zip"
             },
             "type": "drupal-library",
             "extra": {
                 "installer-name": "jquery.hotkeys"
-            }
+            },
+            "license": [
+                "MIT"
+            ]
         },
         {
             "name": "jquery/icheck",
@@ -6584,103 +6747,130 @@
             "type": "drupal-library",
             "extra": {
                 "installer-name": "jquery.icheck"
-            }
+            },
+            "license": [
+                "MIT"
+            ]
         },
         {
             "name": "jquery/image-picker",
             "version": "0.3.1",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/rvera/image-picker/archive/0.3.1.zip"
+                "url": "https://github.com/rvera/image-picker/archive/refs/tags/0.3.1.zip"
             },
             "type": "drupal-library",
             "extra": {
                 "installer-name": "jquery.image-picker"
-            }
+            },
+            "license": [
+                "MIT"
+            ]
         },
         {
             "name": "jquery/inputmask",
-            "version": "5.0.6",
+            "version": "5.0.7",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/RobinHerbots/jquery.inputmask/archive/5.0.6.zip"
+                "url": "https://github.com/RobinHerbots/jquery.inputmask/archive/refs/tags/5.0.7.zip"
             },
             "type": "drupal-library",
             "extra": {
                 "installer-name": "jquery.inputmask"
-            }
+            },
+            "license": [
+                "MIT"
+            ]
         },
         {
             "name": "jquery/intl-tel-input",
-            "version": "16.1.0",
+            "version": "17.0.19",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/jackocnr/intl-tel-input/archive/v16.1.0.zip"
+                "url": "https://github.com/jackocnr/intl-tel-input/archive/refs/tags/v17.0.19.zip"
             },
             "type": "drupal-library",
             "extra": {
                 "installer-name": "jquery.intl-tel-input"
-            }
+            },
+            "license": [
+                "MIT"
+            ]
         },
         {
             "name": "jquery/rateit",
-            "version": "1.1.3",
+            "version": "1.1.5",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/gjunge/rateit.js/archive/1.1.3.zip"
+                "url": "https://github.com/gjunge/rateit.js/archive/refs/tags/1.1.5.zip"
             },
             "type": "drupal-library",
             "extra": {
                 "installer-name": "jquery.rateit"
-            }
+            },
+            "license": [
+                "MIT"
+            ]
         },
         {
             "name": "jquery/select2",
             "version": "4.0.13",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/select2/select2/archive/4.0.13.zip"
+                "url": "https://github.com/select2/select2/archive/refs/tags/4.0.13.zip"
             },
             "type": "drupal-library",
             "extra": {
                 "installer-name": "jquery.select2"
-            }
+            },
+            "license": [
+                "MIT"
+            ]
         },
         {
             "name": "jquery/textcounter",
             "version": "0.9.0",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/ractoon/jQuery-Text-Counter/archive/0.9.0.zip"
+                "url": "https://github.com/ractoon/jQuery-Text-Counter/archive/refs/tags/0.9.0.zip"
             },
             "type": "drupal-library",
             "extra": {
                 "installer-name": "jquery.textcounter"
-            }
+            },
+            "license": [
+                "MIT"
+            ]
         },
         {
             "name": "jquery/timepicker",
-            "version": "1.13.18",
+            "version": "1.14.0",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/jonthornton/jquery-timepicker/archive/1.13.18.zip"
+                "url": "https://github.com/jonthornton/jquery-timepicker/archive/refs/tags/1.14.0.zip"
             },
             "type": "drupal-library",
             "extra": {
                 "installer-name": "jquery.timepicker"
-            }
+            },
+            "license": [
+                "MIT"
+            ]
         },
         {
             "name": "jquery/toggles",
             "version": "4.0.0",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/simontabor/jquery-toggles/archive/v4.0.0.zip"
+                "url": "https://github.com/simontabor/jquery-toggles/archive/refs/tags/v4.0.0.zip"
             },
             "type": "drupal-library",
             "extra": {
                 "installer-name": "jquery.toggles"
-            }
+            },
+            "license": [
+                "MIT"
+            ]
         },
         {
             "name": "kreait/firebase-php",
@@ -8722,12 +8912,15 @@
             "version": "2.0.7",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/NigelOToole/progress-tracker/archive/2.0.7.zip"
+                "url": "https://github.com/NigelOToole/progress-tracker/archive/refs/tags/2.0.7.zip"
             },
             "type": "drupal-library",
             "extra": {
                 "installer-name": "progress-tracker"
-            }
+            },
+            "license": [
+                "MIT"
+            ]
         },
         {
             "name": "psr/cache",
@@ -9378,12 +9571,15 @@
             "version": "2.3.0",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/szimek/signature_pad/archive/v2.3.0.zip"
+                "url": "https://github.com/szimek/signature_pad/archive/refs/tags/v2.3.0.zip"
             },
             "type": "drupal-library",
             "extra": {
                 "installer-name": "signature_pad"
-            }
+            },
+            "license": [
+                "MIT"
+            ]
         },
         {
             "name": "stack/builder",
@@ -9491,12 +9687,15 @@
             "version": "3.6.1",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/ariutta/svg-pan-zoom/archive/3.6.1.zip"
+                "url": "https://github.com/ariutta/svg-pan-zoom/archive/refs/tags/3.6.1.zip"
             },
             "type": "drupal-library",
             "extra": {
                 "installer-name": "svg-pan-zoom"
-            }
+            },
+            "license": [
+                "BSD-2-Clause"
+            ]
         },
         {
             "name": "symfony-cmf/routing",
@@ -12238,12 +12437,15 @@
             "version": "12.0.3",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/cferdinandi/tabby/archive/v12.0.3.zip"
+                "url": "https://github.com/cferdinandi/tabby/archive/refs/tags/v12.0.3.zip"
             },
             "type": "drupal-library",
             "extra": {
                 "installer-name": "tabby"
-            }
+            },
+            "license": [
+                "MIT"
+            ]
         },
         {
             "name": "tippyjs/5.x",
@@ -12255,19 +12457,25 @@
             "type": "drupal-library",
             "extra": {
                 "installer-name": "tippyjs/5.x"
-            }
+            },
+            "license": [
+                "MIT"
+            ]
         },
         {
             "name": "tippyjs/6.x",
-            "version": "6.2.6",
+            "version": "6.3.7",
             "dist": {
                 "type": "file",
-                "url": "https://unpkg.com/tippy.js@6.2.6/dist/tippy-bundle.umd.min.js"
+                "url": "https://unpkg.com/tippy.js@6.3.7/dist/tippy-bundle.umd.min.js"
             },
             "type": "drupal-library",
             "extra": {
                 "installer-name": "tippyjs/6.x"
-            }
+            },
+            "license": [
+                "MIT"
+            ]
         },
         {
             "name": "twig/twig",

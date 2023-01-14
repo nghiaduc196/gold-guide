@@ -1,15 +1,13 @@
 <li class="nav-item ml-0 ml-lg-3 position-relative">
-  <a href="#" class="nav-link d-flex align-items-center" role="button" data-toggle="dropdown1"
+  <a href="#" class="nav-link d-flex align-items-center" id="navbarDropdown1" role="button" data-toggle="dropdown"
      aria-haspopup="true" aria-expanded="false">
     <img src="/{{ directory ~'/images/icons/icon_browser.svg' }}">
-    <span class="text-white ml-2">{{ language_name }}</span>
+    <span class="text-white ml-2">{{ language_name|t }}</span>
     <img class="ml-2" src="/{{ directory ~'/images/icons/icon_lang.svg' }}">
   </a>
   <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-{%- for key, item in content['#links']   -%}
-  <a class="dropdown-item" href="{{ drupal_url('<front>', {langcode:item.language.id}) }}">{{ item.title }}</a>
-{%- endfor -%}
+    {%- for key, item in content['#links']   -%}
+      <a class="dropdown-item" href="{{ drupal_url('<current>', {langcode:item.language.id}) }}">{{ item.title }}</a>
+    {%- endfor -%}
   </div>
 </li>
-
-

@@ -1,0 +1,21 @@
+<div class="search-section">
+  <div class="search">
+    <img class="ml-2" src="/{{ directory ~'/images/icons/icon_calender.png' }}">
+    <input type="text">
+    <div class="icon-search">
+      <i class="fa fa-search" aria-hidden="true"></i>
+    </div>
+  </div>
+</div>
+<hr class="hr-search">
+<div class="guide-list">
+  <div class="title">
+    <div class="main-title">{{ "GUIDE LIST"|t }}</div>
+    <div class="description">{{ "気になるガイドを選択してください"|t }}</div>
+  </div>
+  <div class="list">
+    {% for row in rows %}
+      {{ row.content }}
+    {% endfor %}
+  </div>
+</div>

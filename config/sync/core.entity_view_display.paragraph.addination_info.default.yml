@@ -1,0 +1,62 @@
+uuid: 49f9e488-19ab-4464-a08b-edc8993f651f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.addination_info.field_national_license
+    - field.field.paragraph.addination_info.field_operating_day
+    - field.field.paragraph.addination_info.field_other_qualification
+    - field.field.paragraph.addination_info.field_region_license
+    - field.field.paragraph.addination_info.field_working_day
+    - paragraphs.paragraphs_type.addination_info
+  module:
+    - options
+id: paragraph.addination_info.default
+targetEntityType: paragraph
+bundle: addination_info
+mode: default
+content:
+  field_national_license:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_operating_day:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_other_qualification:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_region_license:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_working_day:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  search_api_excerpt: true

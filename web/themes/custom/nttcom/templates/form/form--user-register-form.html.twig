@@ -1,0 +1,55 @@
+<div class="register-page">
+  <div class="container-fluid">
+    <form {{ attributes.addClass(['form']) }} novalidate="">
+      {{ dump(element) }}
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <div class="col-md-12 mb-3">
+            {{ element.account.mail }}
+          </div>
+          <div class="row mb-5">
+            <div class="col-md-6">
+              {{ element.field_first_name }}
+            </div>
+            <div class="col-md-6">
+              {{ element.field_last_name }}
+            </div>
+          </div>
+          <div class="row mb-5">
+            <div class="col-md-12">
+              {{ form.field_area }}
+            </div>
+          </div>
+          <div class="row mb-5">
+            <div class="col-md-6">
+              {{ form.field_national_license }}
+            </div>
+            <div class="col-md-6">
+              {{ form.field_region_license }}
+            </div>
+          </div>
+          <div class="row mb-5">
+            <div class="col-md-6">
+              {{ form.field_operating_day }}
+            </div>
+            <div class="col-md-6">
+              {{ form.field_working_day }}
+            </div>
+          </div>
+          <div class="row mb-5">
+            <div class="col-md-12 mb-3">
+              {{ form.field_other_qualification }}
+            </div>
+            <div class="col-md-12 mb-3">
+              {{ form.field_phone_number }}
+            </div>
+          </div>
+          {{ element.actions }}
+          {{ element.form_build_id }}
+          {{ element.form_id }}
+          {{ element.form_token }}
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

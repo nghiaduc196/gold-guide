@@ -1,43 +1,43 @@
 <ul class="navbar-nav ml-auto">
-  <li class="nav-item">
-    <a href="#" class="nav-link d-flex align-items-center">
-      <img src="/{{ directory ~'/images/icons/icon_faq.svg' }}">
-      <span class="text-white ml-2">{{ "FAQ"|t }}</span>
-    </a>
-  </li>
-  {{ drupal_block('language_block:language_interface') }}
-  {% if logged_in %}
-    <li class="nav-item dropdown ml-0 ml-lg-3">
-      <a class="nav-link d-flex align-items-center" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-         aria-haspopup="true" aria-expanded="false">
-        <img src="/{{ directory ~'/images/icons/icon_person.svg' }}" width="20" height="21">
-        <span class="text-white ml-2">{{ "Sign Out"|t }}</span>
-        <img class="ml-2" src="/{{ directory ~'/images/icons/icon_lang.svg' }}">
-      </a>
-      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-        {% if items %}
-          {% for item in items %}
-            <a class="dropdown-item" href="{{ item.url }}">{{ item.title }}</a>
-          {% endfor %}
-        {% endif %}
-      </div>
-
+    <li class="nav-item">
+        <a href="#" class="nav-link d-flex align-items-center">
+            <img src="/{{ directory ~'/images/icons/icon_faq.svg' }}">
+            <span class="text-white ml-2">{{ "FAQ"|t }}</span>
+        </a>
     </li>
-  {% else %}
-    <li class="nav-item dropdown ml-0 ml-lg-3">
-      <a class="nav-link d-flex align-items-center" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-         aria-haspopup="true" aria-expanded="false">
-        <img src="/{{ directory ~'/images/icons/icon_person.svg' }}" width="20" height="21">
-        <span class="text-white ml-2">{{ "Sign In"|t }}</span>
-      </a>
-      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="{{ path('user.login',{'type':'guest'}) }}">{{ "For Guest" }}</a>
-        <a class="dropdown-item" href="{{ path('user.login',{'type':'guide'}) }}">{{ "For Guide" }}</a>
-        <a class="dropdown-item" href="{{ path('user.login',{'type':'system'}) }}">{{ "For System" }}</a>
-      </div>
+    {{ drupal_block('language_block:language_interface') }}
+    {% if logged_in %}
+        <li class="nav-item dropdown ml-0 ml-lg-3">
+            <a class="nav-link d-flex align-items-center" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">
+                <img src="/{{ directory ~'/images/icons/icon_person.svg' }}" width="20" height="21">
+                <span class="text-white ml-2">{{ "Sign Out"|t }}</span>
+                <img class="ml-2" src="/{{ directory ~'/images/icons/icon_lang.svg' }}">
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                {% if items %}
+                    {% for item in items %}
+                        <a class="dropdown-item" href="{{ item.url }}">{{ item.title }}</a>
+                    {% endfor %}
+                {% endif %}
+            </div>
 
-    </li>
-  {% endif %}
+        </li>
+    {% else %}
+        <li class="nav-item dropdown ml-0 ml-lg-3">
+            <a class="nav-link d-flex align-items-center" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">
+                <img src="/{{ directory ~'/images/icons/icon_person.svg' }}" width="20" height="21">
+                <span class="text-white ml-2">{{ "Sign In"|t }}</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{ path('user.login',{'type':'guest'}) }}">{{ "For Guest" }}</a>
+                <a class="dropdown-item" href="{{ path('user.login',{'type':'guide'}) }}">{{ "For Guide" }}</a>
+                <a class="dropdown-item" href="{{ path('user.login',{'type':'system'}) }}">{{ "For System" }}</a>
+            </div>
+
+        </li>
+    {% endif %}
 
 </ul>
 

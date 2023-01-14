@@ -10,7 +10,6 @@ module:
   block: 0
   block_content: 0
   breakpoint: 0
-  captcha: 0
   ckeditor: 0
   comment: 0
   config: 0
@@ -39,7 +38,6 @@ module:
   help: 0
   history: 0
   image: 0
-  image_captcha: 0
   inline_form_errors: 0
   jquery_ui: 0
   jquery_ui_datepicker: 0
@@ -52,6 +50,8 @@ module:
   link: 0
   locale: 0
   mail_login: 0
+  maillog: 0
+  mailsystem: 0
   media: 0
   media_library: 0
   menu_link_content: 0
@@ -60,6 +60,7 @@ module:
   node: 0
   nttcom_booking: 0
   nttcom_calendar: 0
+  nttcom_change_pwd_page: 0
   nttcom_chat: 0
   nttcom_user: 0
   options: 0
@@ -71,9 +72,7 @@ module:
   path: 0
   path_alias: 0
   rdf: 0
-  recaptcha: 0
   rest: 0
-  role_theme_switcher: 0
   search: 0
   search_api: 0
   serialization: 0

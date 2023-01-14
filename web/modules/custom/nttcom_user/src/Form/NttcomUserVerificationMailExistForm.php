@@ -20,7 +20,7 @@ class NttcomUserVerificationMailExistForm extends FormBase {
       '#title' => $this->t('Email'),
       '#default_value' => $form_state->getValue('email_verification', '')
     ];
-    
+
     $form['actions'] = [
       '#type' => 'actions',
     ];
@@ -47,10 +47,10 @@ class NttcomUserVerificationMailExistForm extends FormBase {
       $config->set('status', TRUE)->save();
     }
     $form['#prefix'] = $this->getFormPrefix(1);
-    
+
     return $form;
   }
-  
+
   public function mailValidate (array &$form, FormStateInterface $form_state) {
     $email_regist = $form_state->getValue('email_verification');
     if (!\Drupal::service('email.validator')->isValid($email_regist)
@@ -68,11 +68,11 @@ class NttcomUserVerificationMailExistForm extends FormBase {
         t('This email address %mail already exists', array('%mail' => $email_regist)));
     }
   }
-  
+
   public function submitForm (array &$form, FormStateInterface $form_state) {
     // TODO: Implement submitForm() method.
   }
-  
+
   public function sendCodeVerification(array &$form, FormStateInterface $form_state) {
     $langcode = \Drupal::currentUser()->getPreferredLangcode();
     $random = new Random();
@@ -89,7 +89,7 @@ class NttcomUserVerificationMailExistForm extends FormBase {
 
     $send = TRUE;
     $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
-    if ($result['result'] === TRUE) {
+    if ($result['send'] === TRUE) {
       $message = t('Code has been sent to your email. Please check your email: @email ', ['@email' => $to]);
       \Drupal::messenger()->addMessage($message);
       \Drupal::logger('nttcom-user-mail')->info($message);
@@ -106,7 +106,7 @@ class NttcomUserVerificationMailExistForm extends FormBase {
         ->setRebuild(TRUE);
     }
   }
-  
+
   public function stepBuildFormVerificationCode(array &$form, FormStateInterface $form_state) {
 //    $form['#attached']['library'][] = 'nttcom_user/verification_email';
     $form['email_verification']['#access'] = FALSE;
@@ -134,9 +134,9 @@ class NttcomUserVerificationMailExistForm extends FormBase {
       '#submit' => ['::nextStepRegisterUser'],
       '#validate' => ['::codeVerificationValidate'],
     ];
-    
+
     $form['#prefix'] = $this->getFormPrefix(2);
-    
+
     return $form;
   }
   public function codeVerificationValidate(array &$form, FormStateInterface $form_state) {
@@ -164,7 +164,7 @@ class NttcomUserVerificationMailExistForm extends FormBase {
       // builder to rebuild the form. Otherwise, even though we set 'page'
       // to 1, the AJAX-rendered form will still show page 2.
       ->setRebuild(TRUE);
-    
+
   }
 
   public function getFormPrefix($step) {

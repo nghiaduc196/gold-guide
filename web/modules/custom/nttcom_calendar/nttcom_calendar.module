@@ -1,5 +1,9 @@
 <?php
 
+use Drupal\Component\Serialization\Json;
+use Drupal\nttcom_calendar\CalendarInterface;
+use Drupal\nttcom_calendar\Entity\Calendar;
+
 /**
  * Implements hook_theme().
  */
@@ -12,6 +16,10 @@ function nttcom_calendar_theme($existing, $type, $theme, $path) {
     'nttcom_block_calendar_form' => [
       'render element' => 'form',
       'template' => 'nttcom-calendar-block-form',
+    ],
+    'nttcom_guide_calendar_block' => [
+      'render element' => 'children',
+      'template' => 'nttcom-guide-calendar-block',
     ]
   ];
 }
@@ -20,5 +28,35 @@ function nttcom_calendar_theme($existing, $type, $theme, $path) {
  * Implements hook_preprocess_HOOK().
  */
 function nttcom_calendar_preprocess_views_view_fullcalendar(array &$variables) {
-  $variables['#attached']['library'][] ='nttcom_calendar/nttcom.fullcalendar';
+  $full_calendar_views = &$variables['#attached']['drupalSettings']['fullCalendarView'];
+  $full_calendar_view = $full_calendar_views[0];
+  if (isset($full_calendar_view['calendar_options'])) {
+    $calendar_options = Json::decode($full_calendar_view['calendar_options']);
+    foreach ($calendar_options['events'] as &$event) {
+      _nttcom_calendar_render_color($event);
+    }
+    $full_calendar_views[0]['calendar_options'] = Json::encode($calendar_options);
+  }
+  $variables['#attached']['library'][] = 'nttcom_calendar/nttcom.fullcalendar';
+}
+
+/**
+ * {@inheritdoc}
+ */
+function _nttcom_calendar_render_color(&$event) {
+  if (isset($event['backgroundColor'])) {
+    $calendar = Calendar::load($event['eid']);
+    $color = '#1D8EFF';
+    if ($calendar instanceof CalendarInterface) {
+      if (!$calendar->get('status')->value) {
+        $color = '#767676';
+      }
+      if (!$calendar->get('field_spot')->isEmpty()) {
+        /** @var Drupal\node\NodeInterface $spot */
+        $spot = $calendar->get('field_spot')->entity;
+        $color = '#BF0000';
+      }
+    }
+    $event['backgroundColor'] = $color;
+  }
 }

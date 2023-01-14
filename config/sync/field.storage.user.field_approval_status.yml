@@ -12,6 +12,9 @@ type: list_string
 settings:
   allowed_values:
     -
+      value: new_account_guide
+      label: 'New Guide'
+    -
       value: waiting_approval
       label: 'Waiting Approval'
     -

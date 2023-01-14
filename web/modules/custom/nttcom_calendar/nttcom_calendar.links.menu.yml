@@ -1,10 +1,16 @@
-entity.calendar.settings:
-  title: 'Calendar'
-  description: 'Configure a Calendar entity type.'
-  route_name:  entity.calendar.settings
-  parent: system.admin_structure
-entity.calendar.collection:
-  title: 'Calendars'
-  description: 'List of calendars.'
-  route_name: entity.calendar.collection
-  parent: system.admin_content
+#entity.calendar.settings:
+#  title: 'Calendar'
+#  description: 'Configure a Calendar entity type.'
+#  route_name:  entity.calendar.settings
+#  parent: system.admin_structure
+#
+#entity.calendar.collection:
+#  title: 'Calendars'
+#  description: 'List of calendars.'
+#  route_name: entity.calendar.collection
+#  parent: system.admin_content
+
+nttcom_calendar.user_my_calendar:
+  title: 'My Calendar'
+  route_name: nttcom_calendar.my-calendar
+  menu_name: user-menu

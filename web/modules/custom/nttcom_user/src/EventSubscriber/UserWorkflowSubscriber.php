@@ -7,11 +7,13 @@ use Drupal\Core\Path\PathValidator;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Url;
+use Drupal\views\Plugin\views\argument\NullArgument;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
+use Drupal\user\Entity\User;
 
 /**
  * Updates the current user's last access time.
@@ -82,36 +84,35 @@ class UserWorkflowSubscriber implements EventSubscriberInterface {
    * @param \Symfony\Component\HttpKernel\Event\RequestEvent $event
    *   The event to process.
    */
-  public function onWorkflowUser(RequestEvent $event) {
-    $route_name = $this->routeMatch->getRouteName();
+  public function onGuideUpdateInfo(RequestEvent $event) {
+    $url_object = $this->pathValidator->getUrlIfValid($this->request->getRequestUri());
     $redirect_url = NULL;
-    if ($this->account->isAuthenticated()) {
-      if (in_array(ROLE_GUIDE, $this->account->getRoles())) {
-      
-      }
-      
-      switch ($route_name) {
-        case 'user.login';
-          // Redirect an authenticated user to the profile page.
-          $redirect_url = Url::fromRoute('entity.user.canonical', ['user' => $this->account->id()], ['absolute' => TRUE]);
-          break;
+    if ($url_object !== FALSE) {
+      $route_name = $url_object->getRouteName();
+      $param = $this->request->query->all();
+      $route_access = [
+        'nttcom_change_pwd_page.change_password_form',
+        'user.logout',
+        'nttcom_user.guide_entry_form'
+      ];
+      $user = User::load($this->account->id());
+      $roles = $user->getRoles();
+      $approval = $user->get('field_approval_status')->value;
 
-        case 'user.register';
-          // Redirect an authenticated user to the profile form.
-          $redirect_url = Url::fromRoute('entity.user.edit_form', ['user' => $this->account->id()], ['absolute' => TRUE]);
-          break;
+      if ($this->account->isAuthenticated() && !in_array($route_name, $route_access) &&
+        in_array(ROLE_GUIDE, $roles) && !in_array(ROLE_SUPER_ADMIN, $roles)
+        && in_array($approval,['new_account_guide','waiting_approval'])) {
+          $redirect_url = Url::fromRoute('nttcom_user.guide_entry_form',[], ['absolute' => TRUE]);
+      }
+      if($this->account->isAuthenticated() && in_array($approval,['reject'])){
+        user_logout();
+        //$redirect_url = Url::fromRoute('<front>',[], ['absolute' => TRUE]);
       }
     }
-    elseif ($route_name === 'user.page') {
-      $redirect_url = Url::fromRoute('user.login', [], ['absolute' => TRUE]);
-    }
-    elseif ($route_name === 'user.logout') {
-      $redirect_url = Url::fromRoute('<front>', [], ['absolute' => TRUE]);
-    }
-
-    if ($redirect_url) {
+    if (isset($redirect_url)) {
       $event->setResponse(new RedirectResponse($redirect_url->toString()));
     }
+
   }
 
   /**
@@ -122,6 +123,7 @@ class UserWorkflowSubscriber implements EventSubscriberInterface {
    */
   public function onGuestRegisterUser(RequestEvent $event) {
     $url_object = $this->pathValidator->getUrlIfValid($this->request->getRequestUri());
+    $redirect_url = NULL;
     if ($url_object !== FALSE) {
       $route_name = $url_object->getRouteName();
       $param = $this->request->query->all();
@@ -135,12 +137,12 @@ class UserWorkflowSubscriber implements EventSubscriberInterface {
       $event->setResponse(new RedirectResponse($redirect_url->toString()));
     }
   }
-  
+
   /**
    * {@inheritdoc}
    */
   public static function getSubscribedEvents() {
-    $events[KernelEvents::REQUEST][] = ['onWorkflowUser', 100];
+    $events[KernelEvents::REQUEST][] = ['onGuideUpdateInfo', 100];
     $events[KernelEvents::REQUEST][] = ['onGuestRegisterUser', 99];
     return $events;
   }

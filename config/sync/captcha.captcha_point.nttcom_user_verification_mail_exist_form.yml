@@ -1,7 +1,0 @@
-uuid: 016dbff4-5ca3-46b2-904f-5a7de058fd35
-langcode: en
-status: true
-dependencies: {  }
-formId: nttcom_user_verification_mail_exist_form
-captchaType: recaptcha/reCAPTCHA
-label: nttcom_user_verification_mail_exist_form

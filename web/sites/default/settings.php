@@ -793,9 +793,9 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 
 $databases['default']['default'] = array (
   'database' => 'nttcom-w',
-  'username' => 'admin',
-  'password' => '',
-  'host' => 'db',
+  'username' => 'root',
+  'password' => '123456',
+  'host' => 'mysql',
   'driver' => 'mysql',
 );
 $settings['config_sync_directory'] = '../config/sync';

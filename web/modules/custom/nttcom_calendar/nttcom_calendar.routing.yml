@@ -13,3 +13,10 @@ nttcom_calendar.add_calendar:
     _form: 'Drupal\nttcom_calendar\Form\AddCalendarForm'
   requirements:
     _permission: 'access content'
+
+nttcom_calendar.my-calendar:
+  path: '/user/my-calendar'
+  defaults:
+    _title: 'My calendar'
+  requirements:
+    _role: 'guide'

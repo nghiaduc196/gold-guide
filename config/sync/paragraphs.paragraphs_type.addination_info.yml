@@ -1,0 +1,10 @@
+uuid: 54814936-ac19-4501-9084-71a6deb7f6c0
+langcode: en
+status: true
+dependencies: {  }
+id: addination_info
+label: 'Addination info'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

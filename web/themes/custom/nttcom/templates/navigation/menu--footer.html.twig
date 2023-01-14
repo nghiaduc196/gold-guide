@@ -1,5 +1,13 @@
-{% for item in items %}
-  <li class="nav-item">
-    <a class="nav-link active px-0 text-white" href="{{ item.url }}">{{ item.title }}</a>
-  </li>
-{% endfor %}
+<div class="d-flex col-12">
+    <div>
+        {% for item in items %}
+            <li class="nav-item">
+                <a class="nav-link active px-0 text-white" href="{{ item.url }}">{{ item.title }}</a>
+            </li>
+        {% endfor %}
+    </div>
+    <div class="ml-auto justify-content-end">
+        {{ drupal_block('language_block:language_interface') }}
+    </div>
+</div>
+

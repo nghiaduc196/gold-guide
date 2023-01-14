@@ -1,7 +1,0 @@
-uuid: 36f5ae60-5071-48cf-b072-8ef4a3149a37
-langcode: en
-status: true
-dependencies: {  }
-formId: webform_submission_register_by_guide_add_form
-captchaType: recaptcha/reCAPTCHA
-label: webform-submission-register-by-guide-add-form

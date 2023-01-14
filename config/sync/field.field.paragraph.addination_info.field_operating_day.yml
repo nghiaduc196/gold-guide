@@ -1,0 +1,21 @@
+uuid: 75677b7a-aeec-4c22-9f44-5b7fa982c69e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_operating_day
+    - paragraphs.paragraphs_type.addination_info
+  module:
+    - options
+id: paragraph.addination_info.field_operating_day
+field_name: field_operating_day
+entity_type: paragraph
+bundle: addination_info
+label: 稼働日数（2019年）
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

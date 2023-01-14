@@ -1,0 +1,31 @@
+uuid: 9bad3b80-df63-4efc-aa47-31b30d76c9f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_addination_info
+    - paragraphs.paragraphs_type.addination_info
+  module:
+    - entity_reference_revisions
+    - user
+id: user.user.field_addination_info
+field_name: field_addination_info
+entity_type: user
+bundle: user
+label: 'Addination info'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      addination_info: addination_info
+    negate: 0
+    target_bundles_drag_drop:
+      addination_info:
+        weight: 2
+        enabled: true
+field_type: entity_reference_revisions
