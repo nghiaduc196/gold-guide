@@ -1,0 +1,20 @@
+uuid: e63ff283-f99d-432c-94e1-0cfca71d899e
+langcode: en
+status: true
+dependencies:
+  module:
+    - nttcom_calendar
+  theme:
+    - nttcom
+id: nttguidecalendarblock
+theme: nttcom
+region: guide_detail_bottom
+weight: 0
+provider: null
+plugin: nttcom_calendar_guide_calendar_block
+settings:
+  id: nttcom_calendar_guide_calendar_block
+  label: 'NTT Guide Calendar Block'
+  label_display: '0'
+  provider: nttcom_calendar
+visibility: {  }

@@ -1,0 +1,10 @@
+uuid: 302d735f-5793-45fa-a598-aeaa1872f41e
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.guide_detail
+label: 'Guide detail'
+targetEntityType: user
+cache: true
